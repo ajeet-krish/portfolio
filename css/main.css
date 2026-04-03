@@ -1,0 +1,100 @@
+/* --- 1. DRACULA VARIABLES --- */
+:root {
+    --background: #282a36;
+    --current-line: #44475a;
+    --foreground: #f8f8f2;
+    --comment: #6272a4;
+    --cyan: #8be9fd;
+    --green: #50fa7b;
+    --orange: #ffb86c;
+    --pink: #ff79c6;
+    --purple: #bd93f9;
+    --red: #ff5544;
+    --yellow: #f1fa8c;
+    --sidebar-bg: #21222c;
+}
+
+/* --- 2. FONTS & GLOBAL RESET --- */
+@import url('https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/meslo-lg.min.css');
+
+html, body, [data-testid="stAppViewContainer"], [data-testid="stHeader"], .stMarkdown, p, span, div, h1, h2, h3 {
+    font-family: 'Meslo LG L', 'JetBrains Mono', monospace !important;
+}
+
+.stApp {
+    background-color: var(--background);
+}
+
+/* --- 3. LINKS --- */
+a {
+    color: var(--cyan) !important;
+    text-decoration: none !important;
+    transition: 0.3s ease;
+}
+
+a:hover {
+    color: var(--pink) !important;
+    text-decoration: none !important;
+}
+
+/* --- 4. SIDEBAR --- */
+[data-testid="stSidebar"] {
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--current-line);
+}
+
+/* --- 5. NATIVE STREAMLIT BUTTONS --- */
+.stButton>button {
+    background-color: var(--sidebar-bg) !important;
+    color: var(--foreground);
+    border: 1px solid var(--purple);
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+    font-family: 'Meslo LG L', monospace;
+}
+
+.stButton>button:hover {
+    border-color: var(--pink);
+    color: var(--pink);
+    background-color: var(--background);
+    box-shadow: 0 0 10px var(--pink);
+}
+
+/* --- 6. CUSTOM DOWNLOAD BUTTON --- */
+.download-btn {
+    background-color: var(--sidebar-bg) !important;
+    color: var(--purple) !important;
+    padding: 8px 15px;
+    text-decoration: none !important;
+    border-radius: 5px;
+    border: 1px solid var(--purple);
+    display: inline-block;
+    font-family: 'Meslo LG L', monospace;
+    font-size: 15px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: var(--current-line) !important;
+    color: var(--pink) !important;
+    border-color: var(--pink) !important;
+    box-shadow: 0 0 10px var(--pink);
+}
+
+/* --- 7. CODE & METRICS --- */
+code {
+    color: var(--orange);
+    background-color: var(--current-line);
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+[data-testid="stMetricValue"] {
+    color: var(--green) !important;
+}
+
+/* --- 8. UI CLEANUP --- */
+#MainMenu, footer, header {
+    visibility: visible;
+}
