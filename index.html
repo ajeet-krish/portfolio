@@ -27,15 +27,29 @@
             color: var(--foreground);
             font-family: 'Meslo LG L', 'JetBrains Mono', monospace;
             margin: 0;
-            padding: 40px 20px;
             line-height: 1.6;
+            flex-direction: column;
+            align-items:center;
+        }
+
+        /* --- 3. COMPONENTS --- */
+        .top-nav {
+            width: 100%;
             display: flex;
             justify-content: center;
+            gap: 30px;
+            padding: 20px;
+            background: #21222c;
+            border-bottom: 1px solid var(--current-line);
+            font-size: 14px;
+            box-sizing: border-box;
         }
 
         .container {
             max-width: 900px;
             width: 100%;
+            padding: 40px 20px;
+            box-sizing: border-box;
         }
 
         a {
@@ -157,16 +171,8 @@
     </style>
 </head>
 <body>
-<nav style="
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 20px;
-    background: #21222c;
-    border-bottom: 1px solid var(--current-line);
-    font-family: 'Meslo LG L', monospace;
-    font-size: 14px;
-">
+
+<nav class="top-nav">
     <a href="index.html" style="color: var(--purple);">[ 01. Home ]</a>
     <a href="projects.html" style="color: var(--cyan);">[ 02. Projects ]</a>
     <a href="travel.html" style="color: var(--green);">[ 03. Travel ]</a>
@@ -239,9 +245,10 @@
         <div class="card-title">Hardware & Software Proficiencies</div>
         <div style="margin-top: 10px;">
             <span style="color: var(--purple);">return</span> {<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;"CAD": [<span class="tag" style="color: var(--cyan); border: 1px solid var(--cyan);">SolidWorks</span>, <span class="tag" style="color: var(--cyan); border: 1px solid var(--cyan);">FreeCAD</span>],<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;"CAD": [<span class="tag" style="color: var(--cyan); border: 1px solid var(--cyan);">SolidWorks</span>, <span class="tag" style="color: var(--cyan); border: 1px solid var(--cyan);">FreeCAD</span>], <span class="tag" style="color: var(--cyan); border: 1px solid var(--cyan);">Fusion 360</span>]<br>
             &nbsp;&nbsp;&nbsp;&nbsp;"CFD": [<span class="tag" style="color: var(--green); border: 1px solid var(--green);">Ansys CFX</span>, <span class="tag" style="color: var(--green); border: 1px solid var(--green);">OpenFOAM</span>],<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;"Data": [<span class="tag" style="color: var(--orange); border: 1px solid var(--orange);">Python</span>, <span class="tag" style="color: var(--orange); border: 1px solid var(--orange);">MATLAB</span>]<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;"Data": [<span class="tag" style="color: var(--orange); border: 1px solid var(--orange);">Python</span>, <span class="tag" style="color: var(--orange); border: 1px solid var(--orange);">MATLAB</span>],<br>
+                "Manufacturing": [<span class="tag" style="color: var(--pink); border: 1px solid var(--pink);">CNC Machining</span>, <span class="tag" style="color: var(--pink); border: 1px solid var(--pink);">3D Printing</span>, <span class="tag" style="color: var(--pink); border: 1px solid var(--pink);">Lathe & Mill Operations</span>, <span class="tag" style="color: var(--pink); border: 1px solid var(--pink);">MIG Welding</span>]
             }
         </div>
     </div>
