@@ -14,7 +14,9 @@ This repository contains the source code for my professional portfolio website. 
 ## Design Tools
 To ensure high performance and zero-latency loading for recruiters, this site is built as a **Static Web Application**:
 
-* **Frontend:** Pure HTML5, CSS3 (Flexbox/Grid), and Vanilla JavaScript.
+* **Core:** HTML5, CSS3, JavaScript.
+* **Mapping: Leaflet.js (v1.9.4)
+* **Tiles: OpenStreetMap
 * **Theme:** Custom **Dracula Color Palette** for high-contrast, developer-friendly readability.
 * **Typography:** [Meslo LG L](https://github.com/andreberg/Meslo-Font) for a terminal-inspired look.
 * **Hosting:** GitHub Pages (Automated deployment via the `main` branch).
