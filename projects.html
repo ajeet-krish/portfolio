@@ -1,71 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajeet Krishnasamy | projects.py</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/meslo-lg.min.css">
+    <link rel="stylesheet" href="css/main.css">
     <style>
-        /* Add this to your existing <style> block for tabs */
-        .tab-container { margin-top: 20px; }
-        .tab-buttons { display: flex; gap: 10px; border-bottom: 1px solid var(--current-line); margin-bottom: 15px; }
-        .tab-link {
-            padding: 10px 20px; cursor: pointer; color: var(--comment); border: none; background: none; font-family: inherit;
+        /* Tab Logic Styles */
+        .tab-buttons { display: flex; gap: 5px; background: #191a21; padding: 10px 20px 0 20px; border-bottom: 1px solid var(--current-line); }
+        .tab-btn {
+            padding: 8px 15px; border: none; background: none; color: var(--comment);
+            font-family: inherit; cursor: pointer; border-radius: 5px 5px 0 0; transition: 0.2s;
         }
-        .tab-link.active { color: var(--cyan); border-bottom: 2px solid var(--cyan); }
-        .tab-content { display: none; padding: 10px 0; }
+        .tab-btn.active { background: #21222c; color: var(--cyan); border: 1px solid var(--current-line); border-bottom: 2px solid var(--background); margin-bottom: -1px; }
+        .tab-content { display: none; padding: 30px; animation: fadeIn 0.3s; }
         .tab-content.active { display: block; }
+
+        /* Metric Box Styling (Recreating Streamlit st.metric) */
+        .metrics-container { display: flex; gap: 20px; margin-top: 20px; flex-wrap: wrap; }
+        .metric-box {
+            background: #191a21; padding: 15px; border-radius: 8px; border: 1px solid var(--current-line);
+            min-width: 150px; flex: 1;
+        }
+        .metric-label { font-size: 12px; color: var(--comment); }
+        .metric-value { font-size: 20px; color: var(--purple); font-weight: bold; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
 </head>
 <body>
-<nav style="
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 20px;
-    background: #21222c;
-    border-bottom: 1px solid var(--current-line);
-    font-family: 'Meslo LG L', monospace;
-    font-size: 14px;
-">
+
+<nav class="top-nav">
     <a href="index.html" style="color: var(--purple);">[ 01. Home ]</a>
     <a href="projects.html" style="color: var(--cyan);">[ 02. Projects ]</a>
     <a href="travel.html" style="color: var(--green);">[ 03. Travel ]</a>
 </nav>
-    <div class="container">
-        <div class="breadcrumb">~ / portfolio / <span style="color: var(--pink);">projects.html</span></div>
-        <h1 style="color: var(--purple); text-align: left;"># Engineering Projects</h1>
 
-        <div class="card" style="border-color: var(--cyan);">
-            <div class="card-title">>_ Automated Airfoil-to-CFD Tool</div>
-            <a href="https://github.com/..." style="font-size: 12px;">[ View Source Code ]</a>
+<div class="container">
+    <div class="breadcrumb">
+        ~ / portfolio / <span style="color: var(--pink);">projects.py</span>
+    </div>
 
-            <div class="tab-container">
-                <div class="tab-buttons">
-                    <button class="tab-link active" onclick="openTab(event, 'Overview')">Overview</button>
-                    <button class="tab-link" onclick="openTab(event, 'Media')">Media</button>
-                    <button class="tab-link" onclick="openTab(event, 'Results')">Results</button>
-                </div>
+    <h1 style="text-align: left; margin-bottom: 30px;"># Engineering Projects</h1>
 
-                <div id="Overview" class="tab-content active">
-                    <p>Automated pipeline in <b>Python</b> for OpenFOAM geometry generation.</p>
+    <div class="terminal-window">
+        <div class="terminal-header">
+            <div class="dot red"></div><div class="dot yellow"></div><div class="dot green-dot"></div>
+            <div style="margin-left: 10px; font-size: 12px; color: var(--comment);">python3 airfoil_automation.py</div>
+        </div>
+
+        <div class="tab-buttons">
+            <button class="tab-btn active" onclick="openTab(event, 'Overview')">Overview</button>
+            <button class="tab-btn" onclick="openTab(event, 'Media')">Media & Workflow</button>
+            <button class="tab-btn" onclick="openTab(event, 'Results')">Simulation Results</button>
+        </div>
+
+        <div id="Overview" class="tab-content active">
+            <span class="code-keyword">def</span> <span class="code-func">analyze_airfoil</span>():
+            <div style="padding-left: 20px; margin-top: 10px;">
+                <p>Developed an automated pipeline in <span class="code-type">Python</span> to synchronize coordinates from <span class="code-string">".dat"</span> files into <span class="code-keyword">OpenFOAM</span>-ready 3D geometries.</p>
+                <ul style="color: var(--foreground); list-style-type: '>> ';">
+                    <li>Automated AoA (Angle of Attack) sweeping.</li>
+                    <li>Standardized <span class="code-type">k-ω SST</span> turbulence modeling setup.</li>
+                    <li>Reduced setup time for iterative studies by <span class="code-orange">~80%</span>.</li>
+                </ul>
+                <a href="https://github.com/ajeet-krish/Airfoil-CFD-Automation" target="_blank" style="font-size: 13px;">[ git clone source_code ]</a>
+            </div>
+        </div>
+
+        <div id="Media" class="tab-content">
+            <div class="hero" style="gap: 20px;">
+                <div style="flex: 1;">
+                    <img src="assets/img/mesh_preview.png" alt="Mesh Preview" style="width: 100%; border-radius: 5px; border: 1px solid var(--current-line);">
+                    <p style="font-size: 11px; color: var(--comment); text-align: center;">Fig 1. SnappyHexMesh refinement layers</p>
                 </div>
-                <div id="Media" class="tab-content">
-                    <img src="assets/mesh_preview.png" style="width:100%; border-radius:5px;">
+                <div style="flex: 1;">
+                    <span class="code-comment"># Geometry & Meshing</span>
+                    <p style="font-size: 14px;">Custom coordinate-transformation script maps 2D profiles into 3D space, refining edges to capture stagnation points accurately.</p>
                 </div>
-                <div id="Results" class="tab-content">
-                    <p style="color: var(--green);">L/D Ratio: 24.2</p>
+            </div>
+        </div>
+
+        <div id="Results" class="tab-content">
+            <span class="code-func">print</span>(<span class="code-string">"Validation Metrics vs Experimental NACA Data"</span>)
+            <div class="metrics-container">
+                <div class="metric-box">
+                    <div class="metric-label">Max L/D Ratio</div>
+                    <div class="metric-value">24.2 <span style="color: var(--green); font-size: 14px;">↑ 2.1</span></div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">Stall Angle</div>
+                    <div class="metric-value">16°</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">Iterations</div>
+                    <div class="metric-value">~1200</div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script>
-        function openTab(evt, tabName) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabcontent.length; i++) { tabcontent[i].style.display = "none"; }
-            tablinks = document.getElementsByClassName("tab-link");
-            for (i = 0; i < tablinks.length; i++) { tablinks[i].className = tablinks[i].className.replace(" active", ""); }
-            document.getElementById(tabName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
-    </script>
+    <div class="terminal-window">
+        <div class="terminal-header">
+            <div class="dot red"></div><div class="dot yellow"></div><div class="dot green-dot"></div>
+            <div style="margin-left: 10px; font-size: 12px; color: var(--comment);">./turbine_analysis.sh</div>
+        </div>
+        <div style="padding: 30px;">
+            <span class="code-keyword">class</span> <span class="code-type">TurbineAnalysis</span>:
+            <div style="padding-left: 20px; margin-top: 10px;">
+                <p>Experimental evaluation of operational limits. Monitored mechanical torque (<span class="code-orange">T</span>) and rotational speed (<span class="code-orange">N</span>) to calculate efficiency.</p>
+                <pre style="background: #191a21; padding: 15px; border-radius: 5px; color: var(--comment); font-size: 13px;">
+<span class="code-keyword">import</span> pandas <span class="code-keyword">as</span> pd
+<span class="code-comment"># TODO: Render efficiency curve (η vs N)</span>
+df = pd.read_csv(<span class="code-string">"turbine_data.csv"</span>)
+                </pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) { tabcontent[i].style.display = "none"; }
+        tablinks = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < tablinks.length; i++) { tablinks[i].className = tablinks[i].className.replace(" active", ""); }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+
 </body>
 </html>
