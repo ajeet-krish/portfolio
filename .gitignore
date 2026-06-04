@@ -6,3 +6,5 @@ __pycache__/
 *.pyc
 CV/
 assets/maps/
+assets/projects/orbital/orbit_files/
+assets/projects/orbital/outputs/
