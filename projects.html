@@ -38,6 +38,23 @@
             </div>
             <div class="card-meta">University of Ottawa | Capstone 2026</div>
         </div>
+
+        <!-- Orbital Trajectory Animator Card -->
+        <div class="wiki-card" onclick="openProject('orbital')">
+            <div class="wiki-card-header">
+                <div class="wiki-card-title">// 3D Orbital Trajectory Animator</div>
+                <div class="wiki-tag-row">
+                    <span class="tag" style="color: var(--cyan); border: 1px solid var(--cyan);">#Python</span>
+                    <span class="tag" style="color: var(--green); border: 1px solid var(--green);">#PyAstronomy</span>
+                    <span class="tag" style="color: var(--pink); border: 1px solid var(--pink);">#Matplotlib</span>
+                    <span class="tag" style="color: var(--orange); border: 1px solid var(--orange);">#Astrodynamics</span>
+                </div>
+            </div>
+            <div class="wiki-card-body">
+                Solved Kepler's equation for two-body orbital mechanics using PyAstronomy and animated 3D satellite trajectories (LEO, GEO, Polar, Molniya) with comet trails, velocity vectors, and interactive parameter controls via Jupyter widgets.
+            </div>
+            <div class="card-meta">Python, PyAstronomy, Matplotlib, NumPy | 2026</div>
+        </div>
     </div>
 
     <div class="section-header" style="color: var(--cyan); margin-top: 50px;"># CAD Gallery</div>
@@ -98,22 +115,42 @@
                         </ul>
                     </div>
                 </div>
+            `
+        },
+        'orbital': {
+            type: 'gallery',
+            title: '3D Orbital Trajectory Animator',
+            meta: 'Python, PyAstronomy, Matplotlib, NumPy | 2026',
+            content: `
+                <div class="pinterest-hero">
+                    <div class="hero-media">
+                        <div class="modal-media-container">
+                            <img src="assets/projects/orbital/multi_orbit.gif" alt="Multi-Orbit Animation" style="width: 100%;">
+                        </div>
+                    </div>
+                    <div class="hero-specs">
+                        <div style="color: var(--cyan); font-weight: bold; margin-bottom: 8px; font-size: 16px;">// Technical Specifications</div>
+                        <ul style="list-style-type: none; padding: 0; font-size: 15px; line-height: 1.8;">
+                            <li><span style="color: var(--purple);">Method:</span> Two-body problem via KeplerEllipse</li>
+                            <li><span style="color: var(--purple);">Visualization:</span> 3D Matplotlib + FuncAnimation</li>
+                            <li><span style="color: var(--purple);">Orbits:</span> LEO, GEO, Polar, Molniya (e=0.74, i=63.4°)</li>
+                            <li><span style="color: var(--purple);">Features:</span> Comet trails, velocity vectors, ipywidgets</li>
+                            <li style="margin-top: 12px;">
+                                <a href="assets/projects/orbital/orbit.html" target="_blank" class="download-btn" style="display: inline-block; margin-top: 5px;">
+                                    [ View Full Notebook ]
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="pinterest-grid">
                     <div class="pinterest-item">
-                        <img src="assets/projects/crankshaft/drawings.png" alt="Technical Drawing">
-                        <div class="pinterest-caption">// Technical Drawing - Front View</div>
+                        <img src="assets/projects/orbital/molniya.gif" alt="Molniya Orbit">
+                        <div class="pinterest-caption">// Molniya Orbit — e=0.74, i=63.4°, apogee dwell over northern hemisphere</div>
                     </div>
                     <div class="pinterest-item">
-                        <img src="assets/projects/crankshaft/exploded_view.png" alt="Exploded View">
-                        <div class="pinterest-caption">// Exploded Assembly View</div>
-                    </div>
-                    <div class="pinterest-item">
-                        <img src="assets/projects/crankshaft/closeup_1.png" alt="Closeup 1">
-                        <div class="pinterest-caption">// Main Bearing Assembly</div>
-                    </div>
-                    <div class="pinterest-item">
-                        <img src="assets/projects/crankshaft/closeup_2.png" alt="Closeup 2">
-                        <div class="pinterest-caption">// Counterweight Detail</div>
+                        <img src="assets/projects/orbital/leo_animated.gif" alt="LEO with Velocity Vector">
+                        <div class="pinterest-caption">// LEO — animated with velocity vector and fading comet trail</div>
                     </div>
                 </div>
             `
@@ -126,71 +163,17 @@
             content: {
                 'report': `
                     <div class="project-report">
-                        <!-- Phase 1: Design -->
-                        <div class="report-phase">
-                            <div class="section-header" style="font-size: 18px; color: var(--orange);">## 01. Design Concepts & Technical Drawings</div>
-                            <div class="text-block">
-                                Initial phase focused on anatomical constraints and user ergonomics. Technical drawings established the baseline geometry for the protective shell and soft-tissue interface.
+                        <div class="card" style="border-color: var(--orange); text-align: center; padding: 40px 20px;">
+                            <div style="font-size: 48px; margin-bottom: 15px; color: var(--comment);">⚙</div>
+                            <div class="section-header" style="color: var(--orange); font-size: 20px;">// Work in Progress</div>
+                            <div class="text-block" style="color: var(--comment);">
+                                Project media (technical drawings, CAD renders, FEA simulations, and MATLAB GUI screenshots) will be uploaded pending publication clearance.
                             </div>
-                            <div class="media-grid">
-                                <div class="figure-container">
-                                    <img src="assets/projects/capstone/design_concept.jpg" alt="Design Concept">
-                                    <div class="figure-caption">// Initial conceptual sketches and ergonomic layout</div>
-                                </div>
-                                <div class="figure-container">
-                                    <img src="assets/projects/capstone/technical_drawing.jpg" alt="Technical Drawing">
-                                    <div class="figure-caption">// Formal technical specifications and tolerances</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Phase 2: Pad CAD -->
-                        <div class="report-phase">
-                            <div class="section-header" style="font-size: 18px; color: var(--cyan);">## 02. Pad CAD Modeling & Assembly</div>
-                            <div class="text-block">
-                                High-fidelity 3D modeling of the protective pads. The assembly ensures seamless integration between the rigid protective shell and the impact-absorbing material.
-                            </div>
-                            <div class="media-grid">
-                                <div class="figure-container">
-                                    <img src="assets/projects/capstone/pad_cad.jpg" alt="Pad CAD Model">
-                                    <div class="figure-caption">// 3D render of the protective pad geometry</div>
-                                </div>
-                                <div class="figure-container">
-                                    <img src="assets/projects/capstone/assembly_view.jpg" alt="Full Assembly">
-                                    <div class="figure-caption">// Exploded view of the full protector assembly</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Phase 3: FEA -->
-                        <div class="report-phase">
-                            <div class="section-header" style="font-size: 18px; color: var(--green);">## 03. FEA Validation & Impact Analysis</div>
-                            <div class="text-block">
-                                Finite Element Analysis (FEA) was performed to simulate side-impact falls. The simulation validated the energy dissipation capabilities of the design.
-                            </div>
-                            <div class="figure-container">
-                                <video controls muted loop>
-                                    <source src="assets/projects/capstone/fea_analysis.mp4" type="video/mp4">
-                                </video>
-                                <div class="figure-caption">// FEA simulation showing stress distribution during 500N impact</div>
-                            </div>
-                        </div>
-
-                        <!-- Phase 4: MATLAB -->
-                        <div class="report-phase">
-                            <div class="section-header" style="font-size: 18px; color: var(--purple);">## 04. MATLAB App & Parameterization</div>
-                            <div class="text-block">
-                                Developed a custom MATLAB GUI to automate the design process based on patient-specific data.
-                            </div>
-                            <div class="media-grid">
-                                <div class="figure-container">
-                                    <img src="assets/projects/capstone/matlab_gui.jpg" alt="MATLAB GUI">
-                                    <div class="figure-caption">// Custom MATLAB application for patient-specific design</div>
-                                </div>
-                                <div class="figure-container">
-                                    <img src="assets/projects/capstone/logic_flow.jpg" alt="Logic Flow">
-                                    <div class="figure-caption">// Backend logic flow for automated design generation</div>
-                                </div>
+                            <div style="margin-top: 20px;">
+                                <span class="tag" style="color: var(--pink); border: 1px solid var(--pink);">#FEA</span>
+                                <span class="tag" style="color: var(--cyan); border: 1px solid var(--cyan);">#MATLAB</span>
+                                <span class="tag" style="color: var(--orange); border: 1px solid var(--orange);">#CAD</span>
+                                <span class="tag" style="color: var(--green); border: 1px solid var(--green);">#SolidWorks</span>
                             </div>
                         </div>
                     </div>

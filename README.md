@@ -31,8 +31,8 @@ To ensure high performance and zero-latency loading for recruiters, this site is
 ├── travel.html         # Personal travel logs & mapping
 ├── css/
 │   └── main.css        # Global Dracula styles and typography
-├── assets/
-│   ├── img/            # Optimized PNG/JPG project renders
-│   └── docs/           # Resume.pdf
-└── js/
-    └── script.js       # Tab logic and interactive UI components
+└── assets/
+    ├── img/            # Profile picture and travel map icons
+    ├── docs/           # Resume.pdf
+    └── projects/       # Project media (CAD renders, orbital animations, etc.)
+```
