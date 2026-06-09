@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,97 +8,120 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/meslo-lg.min.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
+
 <body>
 
-<nav class="top-nav">
-    <a href="index.html" style="color: var(--purple);">[ 01. Home ]</a>
-    <a href="projects.html" style="color: var(--cyan);">[ 02. Projects ]</a>
-    <a href="travel.html" style="color: var(--green);">[ 03. Travel ]</a>
-</nav>
+    <nav class="top-nav">
+        <a href="index.html" style="color: var(--purple);">[ 01. Home ]</a>
+        <a href="projects.html" style="color: var(--cyan);">[ 02. Projects ]</a>
+        <a href="travel.html" style="color: var(--green);">[ 03. Travel ]</a>
+    </nav>
 
-<div class="container">
-    <div class="breadcrumb">
-        ~ / portfolio / <span style="color: var(--pink);">projects.py</span>
-    </div>
+    <div class="container">
+        <div class="breadcrumb">
+            ~ / portfolio / <span style="color: var(--pink);">projects.py</span>
+        </div>
 
-    <div class="section-header" style="color: var(--purple);"># Engineering Projects</div>
+        <div class="section-header" style="color: var(--purple);"># Engineering Projects</div>
 
-    <div class="wiki-grid">
-        <!-- Capstone Project Card -->
-        <div class="wiki-card" onclick="openProject('capstone')">
-            <div class="wiki-card-header">
-                <div class="wiki-card-title">// Wearable Hip Protector</div>
-                <div class="wiki-tag-row">
-                    <span class="tag" style="color: var(--pink); border: 1px solid var(--pink);">#FEA</span>
-                    <span class="tag" style="color: var(--cyan); border: 1px solid var(--cyan);">#MATLAB</span>
-                    <span class="tag" style="color: var(--orange); border: 1px solid var(--orange);">#CAD</span>
+        <div class="wiki-grid">
+            <!-- Capstone Project Card -->
+            <div class="wiki-card" onclick="openProject('capstone')">
+                <div class="wiki-card-header">
+                    <div class="wiki-card-title">// Wearable Hip Protector</div>
+                    <div class="wiki-tag-row">
+                        <span class="tag" style="color: var(--pink); border: 1px solid var(--pink);">#FEA</span>
+                        <span class="tag" style="color: var(--cyan); border: 1px solid var(--cyan);">#MATLAB</span>
+                        <span class="tag" style="color: var(--orange); border: 1px solid var(--orange);">#CAD</span>
+                    </div>
+                </div>
+                <div class="wiki-card-body">
+                    Design and validation of a medical-grade wearable hip protector. Applied anatomical modeling, FEA
+                    impact simulation, and MATLAB-based patient parameterization.
+                </div>
+                <div class="card-meta">University of Ottawa | Capstone 2026</div>
+            </div>
+
+            <!-- Orbital Trajectory Animator Card -->
+            <div class="wiki-card" onclick="openProject('orbital')">
+                <div class="wiki-card-header">
+                    <div class="wiki-card-title">// 3D Orbital Trajectory Animator</div>
+                    <div class="wiki-tag-row">
+                        <span class="tag" style="color: var(--cyan); border: 1px solid var(--cyan);">#Python</span>
+                        <span class="tag"
+                            style="color: var(--green); border: 1px solid var(--green);">#PyAstronomy</span>
+                        <span class="tag" style="color: var(--pink); border: 1px solid var(--pink);">#Matplotlib</span>
+                        <span class="tag"
+                            style="color: var(--orange); border: 1px solid var(--orange);">#Astrodynamics</span>
+                    </div>
+                </div>
+                <div class="wiki-card-body">
+                    Solved Kepler's equation for two-body orbital mechanics using PyAstronomy and animated 3D satellite
+                    trajectories (LEO, GEO, Polar, Molniya) with comet trails, velocity vectors, and interactive
+                    parameter controls via Jupyter widgets.
+                </div>
+                <div class="card-meta">2026</div>
+            </div>
+
+            <!-- Airfoil Optimization Dashboard Card -->
+            <div class="wiki-card" onclick="openProject('airfoil')">
+                <div class="wiki-card-header">
+                    <div class="wiki-card-title">// Airfoil Optimization Dashboard</div>
+                    <div class="wiki-tag-row">
+                        <span class="tag" style="color: var(--cyan); border: 1px solid var(--cyan);">#AeroSandbox</span>
+                        <span class="tag" style="color: var(--orange); border: 1px solid var(--orange);">#Python</span>
+                        <span class="tag" style="color: var(--green); border: 1px solid var(--green);">#Streamlit</span>
+                        <span class="tag" style="color: var(--pink); border: 1px solid var(--pink);">#MDO</span>
+                    </div>
+                </div>
+                <div class="wiki-card-body">
+                    Multi-point transonic airfoil optimization pipeline using CST parameterization, NeuralFoil, and IPOPT, with an interactive Streamlit dashboard for real-time design exploration and VLM post-analysis.
+                </div>
+                <div class="card-meta">AeroSandbox, CadQuery, Streamlit | 2026</div>
+            </div>
+        </div>
+
+        <div class="section-header" style="color: var(--cyan); margin-top: 50px;"># CAD Gallery</div>
+        <div class="gallery-grid">
+            <!-- Crankshaft Project -->
+            <div class="gallery-card" onclick="openProject('crankshaft')">
+                <video muted loop onmouseover="this.play()" onmouseout="this.pause(); this.currentTime=0;">
+                    <source src="assets/projects/crankshaft/crankshaft animated.mp4" type="video/mp4">
+                </video>
+                <div class="gallery-card-overlay">
+                    <div class="gallery-card-title">Crankshaft Assembly</div>
+                    <div style="font-size: 10px; color: var(--comment);">[ Click to Preview ]</div>
                 </div>
             </div>
-            <div class="wiki-card-body">
-                Design and validation of a medical-grade wearable hip protector. Applied anatomical modeling, FEA impact simulation, and MATLAB-based patient parameterization.
-            </div>
-            <div class="card-meta">University of Ottawa | Capstone 2026</div>
-        </div>
-
-        <!-- Orbital Trajectory Animator Card -->
-        <div class="wiki-card" onclick="openProject('orbital')">
-            <div class="wiki-card-header">
-                <div class="wiki-card-title">// 3D Orbital Trajectory Animator</div>
-                <div class="wiki-tag-row">
-                    <span class="tag" style="color: var(--cyan); border: 1px solid var(--cyan);">#Python</span>
-                    <span class="tag" style="color: var(--green); border: 1px solid var(--green);">#PyAstronomy</span>
-                    <span class="tag" style="color: var(--pink); border: 1px solid var(--pink);">#Matplotlib</span>
-                    <span class="tag" style="color: var(--orange); border: 1px solid var(--orange);">#Astrodynamics</span>
-                </div>
-            </div>
-            <div class="wiki-card-body">
-                Solved Kepler's equation for two-body orbital mechanics using PyAstronomy and animated 3D satellite trajectories (LEO, GEO, Polar, Molniya) with comet trails, velocity vectors, and interactive parameter controls via Jupyter widgets.
-            </div>
-            <div class="card-meta">Python, PyAstronomy, Matplotlib, NumPy | 2026</div>
         </div>
     </div>
 
-    <div class="section-header" style="color: var(--cyan); margin-top: 50px;"># CAD Gallery</div>
-    <div class="gallery-grid">
-        <!-- Crankshaft Project -->
-        <div class="gallery-card" onclick="openProject('crankshaft')">
-            <video muted loop onmouseover="this.play()" onmouseout="this.pause(); this.currentTime=0;">
-                <source src="assets/projects/crankshaft/crankshaft animated.mp4" type="video/mp4">
-            </video>
-            <div class="gallery-card-overlay">
-                <div class="gallery-card-title">Crankshaft Assembly</div>
-                <div style="font-size: 10px; color: var(--comment);">[ Click to Preview ]</div>
+    <!-- Unified Project Modal -->
+    <div id="project-modal" class="modal">
+        <div id="modal-container" class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div id="modal-header-content">
+                <h2 id="modal-title" style="color: var(--cyan); margin: 0;"></h2>
+                <div id="modal-meta" class="card-meta" style="margin-top: 5px;"></div>
+            </div>
+
+            <div id="modal-tabs" class="modal-tabs" style="margin-top: 20px;">
+                <!-- Tabs injected by JS -->
+            </div>
+
+            <div id="modal-body" class="modal-body-content">
+                <!-- Content injected by JS -->
             </div>
         </div>
     </div>
-</div>
 
-<!-- Unified Project Modal -->
-<div id="project-modal" class="modal">
-    <div id="modal-container" class="modal-content">
-        <span class="close-btn" onclick="closeModal()">&times;</span>
-        <div id="modal-header-content">
-            <h2 id="modal-title" style="color: var(--cyan); margin: 0;"></h2>
-            <div id="modal-meta" class="card-meta" style="margin-top: 5px;"></div>
-        </div>
-        
-        <div id="modal-tabs" class="modal-tabs" style="margin-top: 20px;">
-            <!-- Tabs injected by JS -->
-        </div>
-
-        <div id="modal-body" class="modal-body-content">
-            <!-- Content injected by JS -->
-        </div>
-    </div>
-</div>
-
-<script>
-    const projectData = {
-        'crankshaft': {
-            type: 'gallery',
-            title: 'Crankshaft Assembly',
-            meta: 'Autodesk Fusion',
-            content: `
+    <script>
+        const projectData = {
+            'crankshaft': {
+                type: 'gallery',
+                title: 'Crankshaft Assembly',
+                meta: 'Autodesk Fusion',
+                content: `
                 <div class="pinterest-hero">
                     <div class="hero-media">
                         <div class="modal-media-container" style="aspect-ratio: 1/1;">
@@ -116,12 +140,12 @@
                     </div>
                 </div>
             `
-        },
-        'orbital': {
-            type: 'gallery',
-            title: '3D Orbital Trajectory Animator',
-            meta: 'Python, PyAstronomy, Matplotlib, NumPy | 2026',
-            content: `
+            },
+            'orbital': {
+                type: 'gallery',
+                title: '3D Orbital Trajectory Animator',
+                meta: 'Python, PyAstronomy, Matplotlib, NumPy | 2026',
+                content: `
                 <div class="modal-description" style="margin-bottom: 25px;">
                     <p style="font-size: 15px; line-height: 1.8;">
                         A <span style="color: var(--orange);">Python</span>-based orbital mechanics simulator
@@ -142,25 +166,75 @@
                 </div>
                 <div class="figure-container">
                     <img src="assets/projects/orbital/outputs/multi_orbit.gif" alt="Multi-Orbit Animation">
-                    <div class="figure-caption">// Combined orbits — LEO, GEO, Polar, and Molniya trajectories</div>
+                    <div class="figure-caption">// Combined orbits: LEO, GEO, Polar, and Molniya trajectories</div>
                 </div>
                 <div class="figure-container">
                     <img src="assets/projects/orbital/outputs/molniya.gif" alt="Molniya Orbit">
-                    <div class="figure-caption">// Molniya Orbit — e=0.74, i=63.4°, apogee dwell over northern hemisphere</div>
+                    <div class="figure-caption">// Molniya Orbit: e=0.74, i=63.4°, apogee dwell over northern hemisphere</div>
                 </div>
                 <div class="figure-container">
                     <img src="assets/projects/orbital/outputs/leo_animated.gif" alt="LEO with Velocity Vector">
-                    <div class="figure-caption">// LEO — animated with velocity vector and fading comet trail</div>
+                    <div class="figure-caption">// LEO: animated with velocity vector and fading comet trail</div>
                 </div>
             `
-        },
-        'capstone': {
-            type: 'report',
-            title: 'Wearable Hip Protector Design',
-            meta: 'University of Ottawa | Capstone 2026',
-            tabs: ['Report', 'Specs'],
-            content: {
-                'report': `
+            },
+            'airfoil': {
+                type: 'gallery',
+                title: 'Airfoil Optimization Dashboard',
+                meta: 'AeroSandbox, CadQuery, Streamlit | 2026',
+                content: `
+                <div class="modal-description" style="margin-bottom: 25px;">
+                    <p style="font-size: 15px; line-height: 1.8;">
+                        A <span style="color: var(--orange);">Python</span>-based multi-point transonic airfoil
+                        optimization pipeline using <span style="color: var(--cyan);">CST parameterization</span>,
+                        <span style="color: var(--green);">NeuralFoil</span>, and <span style="color: var(--pink);">IPOPT</span>.
+                        Generates a <span style="color: var(--cyan);">multi-body STEP assembly</span> via CadQuery,
+                        portfolio-quality plots, and an interactive
+                        <span style="color: var(--green);">Streamlit dashboard</span> with
+                        <span style="color: var(--purple);">VLM post-analysis</span> for real-time design exploration.
+                    </p>
+                    <div style="margin-top: 15px;">
+                        <a href="https://airfoil-optimizer.streamlit.app/" target="_blank" class="download-btn">
+                            [ Open Dashboard ]
+                        </a>
+                        <a href="https://github.com/ajeet-krish/Airfoil-Optimization-Dashboard" target="_blank" class="download-btn" style="margin-left: 8px;">
+                            [ GitHub Repo ]
+                        </a>
+                    </div>
+                </div>
+                <div class="figure-container">
+                    <img src="assets/projects/airfoil/airfoil_comparison.png" alt="Airfoil Comparison">
+                    <div class="figure-caption">// Initial guess vs optimized transonic airfoil — CST + NeuralFoil + IPOPT (33 iters)</div>
+                </div>
+                <div class="figure-container">
+                    <img src="assets/projects/airfoil/cd_vs_mach.png" alt="Cd vs Mach Sweep">
+                    <div class="figure-caption">// Drag divergence characteristics: baseline vs optimized, M=0.60→0.80 (NeuralFoil sweep)</div>
+                </div>
+                <div class="figure-container">
+                    <img src="assets/projects/airfoil/optimization_convergence.png" alt="Optimization Convergence">
+                    <div class="figure-caption">// IPOPT convergence: weighted Cd objective drops to 0.00588 in 33 iterations (~0.5s wall time)</div>
+                </div>
+                <div class="card" style="border: 1px dashed var(--current-line); text-align: center; padding: 30px 20px; margin-top: 20px;">
+                    <div style="font-size: 24px; margin-bottom: 8px; color: var(--comment);">&#x1F4F7;</div>
+                    <div style="color: var(--comment); font-size: 13px;">Streamlit dashboard screenshots coming soon</div>
+                </div>
+                <div class="card" style="border: 1px dashed var(--current-line); text-align: center; padding: 30px 20px;">
+                    <div style="font-size: 24px; margin-bottom: 8px; color: var(--comment);">&#x2699;</div>
+                    <div style="color: var(--comment); font-size: 13px;">3D CAD assembly screenshots coming soon</div>
+                </div>
+                <div class="card" style="border: 1px dashed var(--current-line); text-align: center; padding: 30px 20px;">
+                    <div style="font-size: 24px; margin-bottom: 8px; color: var(--comment);">&#x1F4D0;</div>
+                    <div style="color: var(--comment); font-size: 13px;">Engineering drawing screenshots coming soon</div>
+                </div>
+                `
+            },
+            'capstone': {
+                type: 'report',
+                title: 'Wearable Hip Protector Design',
+                meta: 'University of Ottawa | Capstone 2026',
+                tabs: ['Report', 'Specs'],
+                content: {
+                    'report': `
                     <div class="project-report">
                         <div class="card" style="border-color: var(--orange); text-align: center; padding: 40px 20px;">
                             <div style="font-size: 48px; margin-bottom: 15px; color: var(--comment);">⚙</div>
@@ -177,7 +251,7 @@
                         </div>
                     </div>
                 `,
-                'specs': `
+                    'specs': `
                     <div class="modal-description">
                         <ul style="list-style-type: none; padding: 0;">
                             <li><span style="color: var(--purple);">Software:</span> SolidWorks, Ansys FEA, MATLAB</li>
@@ -186,77 +260,78 @@
                         </ul>
                     </div>
                 `
+                }
             }
-        }
-    };
+        };
 
-    function openProject(id) {
-        const project = projectData[id];
-        const modal = document.getElementById('project-modal');
-        const container = document.getElementById('modal-container');
-        const tabsContainer = document.getElementById('modal-tabs');
-        const body = document.getElementById('modal-body');
-        
-        // Reset modal state
-        document.getElementById('modal-title').innerText = project.title;
-        document.getElementById('modal-meta').innerText = project.meta;
-        
-        // Wide modal for reports only
-        if (project.type === 'report') {
-            container.classList.add('wide');
-            tabsContainer.style.display = 'flex';
-        } else {
-            container.classList.remove('wide');
-            tabsContainer.style.display = 'none';
+        function openProject(id) {
+            const project = projectData[id];
+            const modal = document.getElementById('project-modal');
+            const container = document.getElementById('modal-container');
+            const tabsContainer = document.getElementById('modal-tabs');
+            const body = document.getElementById('modal-body');
+
+            // Reset modal state
+            document.getElementById('modal-title').innerText = project.title;
+            document.getElementById('modal-meta').innerText = project.meta;
+
+            // Wide modal for reports only
+            if (project.type === 'report') {
+                container.classList.add('wide');
+                tabsContainer.style.display = 'flex';
+            } else {
+                container.classList.remove('wide');
+                tabsContainer.style.display = 'none';
+            }
+
+            // Gallery = direct content, Report = tabbed content
+            if (project.type === 'gallery') {
+                body.innerHTML = project.content;
+            } else {
+                tabsContainer.innerHTML = '';
+                project.tabs.forEach((tab, index) => {
+                    const btn = document.createElement('button');
+                    btn.className = `tab-btn ${index === 0 ? 'active' : ''}`;
+                    btn.innerText = `[ 0${index + 1}. ${tab} ]`;
+                    btn.onclick = () => switchTab(id, tab.toLowerCase());
+                    tabsContainer.appendChild(btn);
+                });
+                body.innerHTML = project.content[project.tabs[0].toLowerCase()];
+            }
+
+            modal.style.display = "block";
+            document.body.style.overflow = "hidden";
         }
 
-        // Gallery = direct content, Report = tabbed content
-        if (project.type === 'gallery') {
-            body.innerHTML = project.content;
-        } else {
-            tabsContainer.innerHTML = '';
-            project.tabs.forEach((tab, index) => {
-                const btn = document.createElement('button');
-                btn.className = `tab-btn ${index === 0 ? 'active' : ''}`;
-                btn.innerText = `[ 0${index + 1}. ${tab} ]`;
-                btn.onclick = () => switchTab(id, tab.toLowerCase());
-                tabsContainer.appendChild(btn);
+        function switchTab(projectId, tabKey) {
+            const project = projectData[projectId];
+            const body = document.getElementById('modal-body');
+
+            // Update Buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.innerText.toLowerCase().includes(tabKey)) {
+                    btn.classList.add('active');
+                }
             });
-            body.innerHTML = project.content[project.tabs[0].toLowerCase()];
+
+            // Update Content
+            body.innerHTML = project.content[tabKey];
         }
-        
-        modal.style.display = "block";
-        document.body.style.overflow = "hidden";
-    }
 
-    function switchTab(projectId, tabKey) {
-        const project = projectData[projectId];
-        const body = document.getElementById('modal-body');
-        
-        // Update Buttons
-        document.querySelectorAll('.tab-btn').forEach(btn => {
-            btn.classList.remove('active');
-            if (btn.innerText.toLowerCase().includes(tabKey)) {
-                btn.classList.add('active');
-            }
-        });
+        function closeModal() {
+            const modal = document.getElementById('project-modal');
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
 
-        // Update Content
-        body.innerHTML = project.content[tabKey];
-    }
-
-    function closeModal() {
-        const modal = document.getElementById('project-modal');
-        modal.style.display = "none";
-        document.body.style.overflow = "auto";
-    }
-
-    window.onclick = function(event) {
-        const modal = document.getElementById('project-modal');
-        if (event.target == modal) closeModal();
-    }
-</script>
+        window.onclick = function (event) {
+            const modal = document.getElementById('project-modal');
+            if (event.target == modal) closeModal();
+        }
+    </script>
 
 
 </body>
+
 </html>
