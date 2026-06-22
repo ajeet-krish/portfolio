@@ -25,6 +25,23 @@
         <div class="section-header" style="color: var(--purple);"># Engineering Projects</div>
 
         <div class="wiki-grid">
+            <!-- Soccer CFD Card -->
+            <div class="wiki-card" onclick="openProject('soccer')">
+                <div class="wiki-card-header">
+                    <div class="wiki-card-title">// The Physics of Soccer</div>
+                    <div class="wiki-tag-row">
+                        <span class="tag" style="color: var(--pink); border: 1px solid var(--pink);">#CFD</span>
+                        <span class="tag" style="color: var(--orange); border: 1px solid var(--orange);">#Python</span>
+                    </div>
+                </div>
+                <div class="wiki-card-body">
+                    CFD analysis of soccer aerodynamics. Compares the Magnus effect vs knuckleball shots, tactical
+                    formation pressure mapping
+                    across 4 formations, and wake drafting analysis of the overlapping fullback run.
+                </div>
+                <div class="card-meta">2026</div>
+            </div>
+
             <!-- Capstone Project Card -->
             <div class="wiki-card" onclick="openProject('capstone')">
                 <div class="wiki-card-header">
@@ -49,16 +66,16 @@
                     <div class="wiki-tag-row">
                         <span class="tag" style="color: var(--cyan); border: 1px solid var(--cyan);">#Python</span>
                         <span class="tag"
-                            style="color: var(--green); border: 1px solid var(--green);">#PyAstronomy</span>
-                        <span class="tag" style="color: var(--pink); border: 1px solid var(--pink);">#Matplotlib</span>
+                            style="color: var(--green); border: 1px solid var(--green);">#Matplotlib</span>
                         <span class="tag"
                             style="color: var(--orange); border: 1px solid var(--orange);">#Astrodynamics</span>
                     </div>
                 </div>
                 <div class="wiki-card-body">
-                    Solved Kepler's equation for two-body orbital mechanics using PyAstronomy and animated 3D satellite
-                    trajectories (LEO, GEO, Polar, Molniya) with comet trails, velocity vectors, and interactive
-                    parameter controls via Jupyter widgets.
+                    Single-page portfolio site demonstrating Keplerian orbit mechanics with 3D animated satellite
+                    trajectories. Covers the two-body problem, LEO, GEO, Polar, Molniya, Hohmann transfers, J2
+                    precession, ground track projection, and parameter sweeps: all generated via a Python package built
+                    on PyAstronomy and Matplotlib.
                 </div>
                 <div class="card-meta">2026</div>
             </div>
@@ -70,14 +87,15 @@
                     <div class="wiki-tag-row">
                         <span class="tag" style="color: var(--cyan); border: 1px solid var(--cyan);">#AeroSandbox</span>
                         <span class="tag" style="color: var(--orange); border: 1px solid var(--orange);">#Python</span>
-                        <span class="tag" style="color: var(--green); border: 1px solid var(--green);">#Streamlit</span>
                         <span class="tag" style="color: var(--pink); border: 1px solid var(--pink);">#MDO</span>
                     </div>
                 </div>
                 <div class="wiki-card-body">
-                    Multi-point transonic airfoil optimization pipeline using CST parameterization, NeuralFoil, and IPOPT, with an interactive Streamlit dashboard for real-time design exploration and VLM post-analysis.
+                    Multi-point transonic airfoil optimization pipeline using CST parameterization, NeuralFoil, and
+                    IPOPT, with an interactive Streamlit dashboard for real-time design exploration and VLM
+                    post-analysis.
                 </div>
-                <div class="card-meta">AeroSandbox, CadQuery, Streamlit | 2026</div>
+                <div class="card-meta">2026</div>
             </div>
         </div>
 
@@ -141,6 +159,143 @@
                 </div>
             `
             },
+            'soccer': {
+                type: 'report',
+                title: 'The Physics of Soccer',
+                meta: 'SU2, ΦFlow, Python | 2026',
+                tabs: ['Overview', 'Shooting', 'Tactical', 'Overlap'],
+                content: {
+                    'overview': `
+                    <div class="modal-description">
+                        <p style="font-size: 15px; line-height: 1.8;">
+                            CFD analysis of soccer aerodynamics combining <span style="color: var(--cyan);">ΦFlow</span>
+                            (rapid prototyping on structured grids) and <span style="color: var(--orange);">SU2</span>
+                            (high-fidelity RANS/URANS finite-volume validation). Covers the <span style="color: var(--pink);">Magnus effect</span>
+                            vs <span style="color: var(--green);">knuckleball</span> shot aerodynamics, tactical formation
+                            pressure mapping using Gaussian influence fields across 4 formations, and wake drafting
+                            analysis of the overlapping fullback run, quantifying up to <span style="color: var(--orange);">42.2% drag reduction</span>
+                            at 2m gap.
+                        </p>
+                        <div style="margin-top: 15px;">
+                            <a href="https://ajeet-krish.github.io/Soccer-CFD/" target="_blank" class="download-btn">
+                                [ Live Site ]
+                            </a>
+                            <a href="https://github.com/ajeet-krish/Soccer-CFD" target="_blank" class="download-btn" style="margin-left: 8px;">
+                                [ GitHub Repo ]
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card" style="border-color: var(--purple); padding: 15px 20px;">
+                        <div style="color: var(--cyan); font-weight: bold; margin-bottom: 8px; font-size: 16px;">// Key Results</div>
+                        <ul style="list-style-type: none; padding: 0; font-size: 14px; line-height: 1.8;">
+                            <li><span style="color: var(--purple);">Strouhal match:</span> St within 5% of Williamson 1988 (laminar NS, Re=120–500)</li>
+                            <li><span style="color: var(--purple);">Cd match:</span> Within 3% of Tritton 1959 (no-spin, Re=120–500)</li>
+                            <li><span style="color: var(--purple);">Drag reduction:</span> 42.2% at 2m inline gap (fullback drafting)</li>
+                            <li><span style="color: var(--purple);">Formation pressure:</span> Center lane: 4-2-3-1 = 93%, 3-5-2 = 100%</li>
+                        </ul>
+                    </div>
+                `,
+                    'shooting': `
+                    <div class="modal-description" style="margin-bottom: 20px;">
+                        <p style="font-size: 15px; line-height: 1.8;">
+                            <span style="color: var(--orange);">ΦFlow</span> simulation at Re ≈ 4×10⁴ comparing
+                            a rotating cylinder (ω=10 rad/s, Magnus effect) vs non-rotating (knuckleball).
+                            The inferno colormap runs dark blue (slow) to bright yellow (fast).
+                        </p>
+                    </div>
+                    <div class="modal-media-container">
+                        <video controls loop muted>
+                            <source src="assets/projects/soccer/velocity_comparison.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="figure-caption" style="margin-top: 8px;">// Magnus (left) vs Knuckleball (right) velocity fields. Magnus wake is narrow and steady; knuckleball wake is wide with alternating von Kármán vortices.</div>
+                    <div class="card" style="border-color: var(--orange); padding: 15px 20px; margin-top: 20px;">
+                        <div style="color: var(--cyan); font-weight: bold; margin-bottom: 8px; font-size: 16px;">// Key Insight</div>
+                        <p style="font-size: 14px; line-height: 1.6; margin: 0;">
+                            Spin suppresses vortex shedding, producing a steady lateral (Magnus) force: a predictable curving shot.
+                            No-spin sheds alternating vortices, creating an unpredictable jitter: the knuckleball.
+                            SU2 RANS SST validates Cd=0.68 (turbulent) against ΦFlow Cd≈1.2 (laminar), bracketing the real behaviour.
+                        </p>
+                    </div>
+                `,
+                    'tactical': `
+                    <div class="modal-description" style="margin-bottom: 20px;">
+                        <p style="font-size: 15px; line-height: 1.8;">
+                            Players modeled as Gaussian influence fields to examine defensive pressure across
+                            <span style="color: var(--cyan);">five vertical lanes</span>. Four formations compared
+                            using a superposition principle: each defender's influence drops off with distance,
+                            and all 11 players are summed to produce a pressure heatmap of the pitch.
+                        </p>
+                    </div>
+                    <div class="figure-container">
+                        <img src="assets/projects/soccer/formation_comparison.png" alt="Formation Comparison Grid">
+                        <div class="figure-caption">// Four formations compared: 4-3-3, 4-4-2, 4-2-3-1, 3-5-2. Dark blue = open space, red = congested.</div>
+                    </div>
+                    <div style="overflow-x: auto; margin-top: 15px;">
+                        <table style="width: 100%; border-collapse: collapse; font-size: 13px; color: var(--foreground);">
+                            <tr style="border-bottom: 1px solid var(--current-line);">
+                                <th style="padding: 6px 10px; text-align: left; color: var(--purple);">Formation</th>
+                                <th style="padding: 6px 10px; text-align: center; color: var(--purple);">Center</th>
+                                <th style="padding: 6px 10px; text-align: center; color: var(--purple);">Half-Space</th>
+                                <th style="padding: 6px 10px; text-align: center; color: var(--purple);">Wings</th>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--current-line);">
+                                <td style="padding: 6px 10px;">4-3-3</td>
+                                <td style="padding: 6px 10px; text-align: center;">81%</td>
+                                <td style="padding: 6px 10px; text-align: center;">57%</td>
+                                <td style="padding: 6px 10px; text-align: center;">32%</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--current-line);">
+                                <td style="padding: 6px 10px;">4-4-2</td>
+                                <td style="padding: 6px 10px; text-align: center;">50%</td>
+                                <td style="padding: 6px 10px; text-align: center;">68%</td>
+                                <td style="padding: 6px 10px; text-align: center;">38%</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--current-line);">
+                                <td style="padding: 6px 10px;">4-2-3-1</td>
+                                <td style="padding: 6px 10px; text-align: center;">93%</td>
+                                <td style="padding: 6px 10px; text-align: center;">51%</td>
+                                <td style="padding: 6px 10px; text-align: center;">32%</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 6px 10px;">3-5-2</td>
+                                <td style="padding: 6px 10px; text-align: center;">100%</td>
+                                <td style="padding: 6px 10px; text-align: center;">65%</td>
+                                <td style="padding: 6px 10px; text-align: center;">21%</td>
+                            </tr>
+                        </table>
+                    </div>
+                `,
+                    'overlap': `
+                    <div class="modal-description" style="margin-bottom: 20px;">
+                        <p style="font-size: 15px; line-height: 1.8;">
+                            CFD analysis of the overlapping fullback: two rectangular bluff bodies in tandem
+                            at Re ≈ 2×10⁴. The <span style="color: var(--cyan);">downstream player enters the winger's
+                            low-pressure wake</span>, producing significant drag reduction. A lateral offset of just
+                            0.35 m drops the benefit from 42.2% to 3.9%, showing how critical the in-line overlap
+                            path is for conserving energy.
+                        </p>
+                    </div>
+                    <div class="figure-container">
+                        <img src="assets/projects/soccer/gap_2m.png" alt="Gap 2m Drafting">
+                        <div class="figure-caption">// 2m gap inline: 42.2% drag reduction; the trailer sits deep in the leader's low-pressure wake</div>
+                    </div>
+                    <div class="figure-container">
+                        <img src="assets/projects/soccer/gap_4m.png" alt="Gap 4m Drafting">
+                        <div class="figure-caption">// 4m gap inline: 27.8% drag reduction; benefit decays as the trailer exits the wake</div>
+                    </div>
+                    <div class="card" style="border-color: var(--green); padding: 15px 20px;">
+                        <div style="color: var(--cyan); font-weight: bold; margin-bottom: 8px; font-size: 16px;">// Gap Distance Sweep</div>
+                        <ul style="list-style-type: none; padding: 0; font-size: 14px; line-height: 1.8;">
+                            <li><span style="color: var(--purple);">2m inline:</span> 42.2% drag reduction</li>
+                            <li><span style="color: var(--purple);">3m inline:</span> 37.3% drag reduction</li>
+                            <li><span style="color: var(--purple);">4m inline:</span> 27.8% drag reduction</li>
+                            <li><span style="color: var(--purple);">2m offset (0.35m lateral):</span> 3.9% drag reduction</li>
+                        </ul>
+                    </div>
+                `
+                }
+            },
             'orbital': {
                 type: 'gallery',
                 title: '3D Orbital Trajectory Animator',
@@ -148,16 +303,19 @@
                 content: `
                 <div class="modal-description" style="margin-bottom: 25px;">
                     <p style="font-size: 15px; line-height: 1.8;">
-                        A <span style="color: var(--orange);">Python</span>-based orbital mechanics simulator
-                        that solves the <span style="color: var(--cyan);">two-body problem</span> using
-                        <span style="color: var(--green);">PyAstronomy</span>'s KeplerEllipse solver.
-                        Renders <span style="color: var(--pink);">3D satellite trajectories</span>
-                        (LEO, GEO, Polar, Molniya) with animated comet trails and velocity vectors,
-                        with interactive parameter controls via <span style="color: var(--orange);">Jupyter</span> widgets.
+                        A <span style="color: var(--orange);">Python</span>-powered single-page portfolio site
+                        demonstrating Keplerian orbit mechanics. Solves the <span style="color: var(--cyan);">two-body problem</span>
+                        via <span style="color: var(--green);">PyAstronomy</span>'s KeplerEllipse solver and renders
+                        <span style="color: var(--pink);">3D animated satellite trajectories</span> with fading comet trails,
+                        velocity vectors, and annotated orbital elements. Covers LEO, GEO, Polar, Molniya,
+                        <span style="color: var(--orange);">Hohmann transfers</span>,
+                        <span style="color: var(--cyan);">J2 precession</span> (RAAN drift + apsidal precession),
+                        <span style="color: var(--green);">ground track projection</span>, and
+                        <span style="color: var(--pink);">parameter sweeps</span> of eccentricity and inclination.
                     </p>
                     <div style="margin-top: 15px;">
-                        <a href="assets/projects/orbital/orbit.html" target="_blank" class="download-btn">
-                            [ View Full Notebook ]
+                        <a href="https://ajeet-krish.github.io/3D-Orbital-Trajectory-Animator/" target="_blank" class="download-btn">
+                            [ Live Site ]
                         </a>
                         <a href="https://github.com/ajeet-krish/3D-Orbital-Trajectory-Animator" target="_blank" class="download-btn" style="margin-left: 8px;">
                             [ GitHub Repo ]
@@ -166,15 +324,15 @@
                 </div>
                 <div class="figure-container">
                     <img src="assets/projects/orbital/outputs/multi_orbit.gif" alt="Multi-Orbit Animation">
-                    <div class="figure-caption">// Combined orbits: LEO, GEO, Polar, and Molniya trajectories</div>
+                    <div class="figure-caption">// Combined orbits: LEO, GEO, Polar, and Molniya trajectories animated together</div>
                 </div>
                 <div class="figure-container">
-                    <img src="assets/projects/orbital/outputs/molniya.gif" alt="Molniya Orbit">
-                    <div class="figure-caption">// Molniya Orbit: e=0.74, i=63.4°, apogee dwell over northern hemisphere</div>
+                    <img src="assets/projects/orbital/outputs/hohmann.gif" alt="Hohmann Transfer">
+                    <div class="figure-caption">// Hohmann transfer: two-burn orbit raising between circular orbits, labels show perigee and apogee burns</div>
                 </div>
                 <div class="figure-container">
-                    <img src="assets/projects/orbital/outputs/leo_animated.gif" alt="LEO with Velocity Vector">
-                    <div class="figure-caption">// LEO: animated with velocity vector and fading comet trail</div>
+                    <img src="assets/projects/orbital/outputs/ground_track.gif" alt="Ground Track Projection">
+                    <div class="figure-caption">// Ground tracks: LEO, GEO, and Molniya projected onto 2D lat/lon map with corresponding 3D view</div>
                 </div>
             `
             },
@@ -204,7 +362,7 @@
                 </div>
                 <div class="figure-container">
                     <img src="assets/projects/airfoil/airfoil_comparison.png" alt="Airfoil Comparison">
-                    <div class="figure-caption">// Initial guess vs optimized transonic airfoil — CST + NeuralFoil + IPOPT (33 iters)</div>
+                    <div class="figure-caption">// Initial guess vs optimized transonic airfoil: CST + NeuralFoil + IPOPT (33 iters)</div>
                 </div>
                 <div class="figure-container">
                     <img src="assets/projects/airfoil/cd_vs_mach.png" alt="Cd vs Mach Sweep">
