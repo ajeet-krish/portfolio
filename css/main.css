@@ -306,6 +306,23 @@ a:hover {
     #map {
         height: 400px;
     }
+
+    /* Collapse wiki grid to single column on mobile */
+    .wiki-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wiki-card {
+        border-top: none;
+        border-left: 4px solid var(--purple);
+        border-radius: 0;
+    }
+
+    .wiki-card:hover {
+        transform: translateX(10px);
+        border-left-color: var(--pink);
+        box-shadow: none;
+    }
 }
 
 /* ==========================================================================
@@ -322,7 +339,6 @@ a:hover {
 .gallery-card {
     background-color: #21222c;
     border: 1px solid var(--current-line);
-    border-radius: 8px;
     overflow: hidden;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -462,25 +478,25 @@ a:hover {
    ========================================================================== */
 
 .wiki-grid {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     margin-top: 20px;
 }
 
 .wiki-card {
     background-color: #21222c;
-    border-left: 4px solid var(--purple);
+    border-top: 4px solid var(--purple);
     padding: 20px;
     cursor: pointer;
     transition: all 0.3s ease;
-    border-radius: 0 8px 8px 0;
 }
 
 .wiki-card:hover {
-    transform: translateX(10px);
+    transform: translateY(-4px);
     background-color: #282a36;
-    border-left-color: var(--pink);
+    border-top-color: var(--pink);
+    box-shadow: 0 8px 25px rgba(189, 147, 249, 0.15);
 }
 
 .wiki-card-header {

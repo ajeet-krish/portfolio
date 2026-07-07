@@ -14,7 +14,7 @@
     <nav class="top-nav">
         <a href="index.html" style="color: var(--purple);">[ 01. Home ]</a>
         <a href="projects.html" style="color: var(--cyan);">[ 02. Projects ]</a>
-        <a href="travel.html" style="color: var(--green);">[ 03. Travel ]</a>
+        <a href="gallery.html" style="color: var(--orange);">[ 03. Gallery ]</a>
     </nav>
 
     <div class="container">
@@ -25,7 +25,23 @@
         <div class="section-header" style="color: var(--purple);"># Engineering Projects</div>
 
         <div class="wiki-grid">
-            <!-- Airfoil CFD Explorer Card -->
+            <!-- 1. SwarmGNC Card -->
+            <div class="wiki-card" onclick="openProject('swarm')">
+                <div class="wiki-card-header">
+                    <div class="wiki-card-title">// SwarmGNC: Decentralized UAV Formation Control</div>
+                    <div class="wiki-tag-row">
+                        <span class="tag" style="color: var(--cyan); border: 1px solid var(--cyan);">#Python</span>
+                        <span class="tag" style="color: var(--orange); border: 1px solid var(--orange);">#GNC</span>
+                        <span class="tag" style="color: var(--green); border: 1px solid var(--green);">#Controls</span>
+                    </div>
+                </div>
+                <div class="wiki-card-body">
+                    Decentralized multi-agent UAV swarm with LQR optimal control, APF obstacle avoidance, and graph Laplacian consensus. Monte Carlo parameter sensitivity analysis across 4 behavioral regimes.
+                </div>
+                <div class="card-meta">2026</div>
+            </div>
+
+            <!-- 2. Airfoil CFD Explorer Card -->
             <div class="wiki-card" onclick="openProject('airfoil-cfd')">
                 <div class="wiki-card-header">
                     <div class="wiki-card-title">// Airfoil CFD Explorer: Automated Aerodynamic Analysis & Shape
@@ -43,11 +59,11 @@
                 <div class="card-meta">2026</div>
             </div>
 
-            <!-- Soccer CFD Card -->
+            <!-- 3. Soccer CFD Card -->
             <div class="wiki-card" onclick="openProject('soccer')">
                 <div class="wiki-card-header">
                     <div class="wiki-card-title">// The Aerodynamics of Soccer: CFD Analysis of Spin, Wake, and Tactical
-                        Flow </div>
+                        Flow</div>
                     <div class="wiki-tag-row">
                         <span class="tag" style="color: var(--pink); border: 1px solid var(--pink);">#CFD</span>
                         <span class="tag" style="color: var(--orange); border: 1px solid var(--orange);">#Python</span>
@@ -61,7 +77,23 @@
                 <div class="card-meta">2026</div>
             </div>
 
-            <!-- Capstone Project Card -->
+            <!-- 4. F1 Dashboard Card -->
+            <div class="wiki-card" onclick="openProject('f1')">
+                <div class="wiki-card-header">
+                    <div class="wiki-card-title">// F1 Aerodynamics Dashboard</div>
+                    <div class="wiki-tag-row">
+                        <span class="tag" style="color: var(--cyan); border: 1px solid var(--cyan);">#Python</span>
+                        <span class="tag" style="color: var(--orange); border: 1px solid var(--orange);">#CFD</span>
+                        <span class="tag" style="color: var(--green); border: 1px solid var(--green);">#Telemetry</span>
+                    </div>
+                </div>
+                <div class="wiki-card-body">
+                    Interactive F1 aerodynamics platform combining FastF1 telemetry, first-principles analytical models, and SU2 RANS CFD validation. 7 analysis modules across an 11-page Mercedes-themed portfolio.
+                </div>
+                <div class="card-meta">2026</div>
+            </div>
+
+            <!-- 5. Capstone Project Card -->
             <div class="wiki-card" onclick="openProject('capstone')">
                 <div class="wiki-card-header">
                     <div class="wiki-card-title">// Wearable Hip Protector</div>
@@ -78,16 +110,14 @@
                 <div class="card-meta">University of Ottawa | Capstone 2026</div>
             </div>
 
-            <!-- Orbital Trajectory Animator Card -->
+            <!-- 6. Orbital Trajectory Animator Card -->
             <div class="wiki-card" onclick="openProject('orbital')">
                 <div class="wiki-card-header">
                     <div class="wiki-card-title">// 3D Orbital Trajectory Animator</div>
                     <div class="wiki-tag-row">
                         <span class="tag" style="color: var(--cyan); border: 1px solid var(--cyan);">#Python</span>
-                        <span class="tag"
-                            style="color: var(--green); border: 1px solid var(--green);">#Matplotlib</span>
-                        <span class="tag"
-                            style="color: var(--orange); border: 1px solid var(--orange);">#Astrodynamics</span>
+                        <span class="tag" style="color: var(--green); border: 1px solid var(--green);">#Matplotlib</span>
+                        <span class="tag" style="color: var(--orange); border: 1px solid var(--orange);">#Astrodynamics</span>
                     </div>
                 </div>
                 <div class="wiki-card-body">
@@ -100,18 +130,8 @@
             </div>
         </div>
 
-        <div class="section-header" style="color: var(--cyan); margin-top: 50px;"># CAD Gallery</div>
-        <div class="gallery-grid">
-            <!-- Crankshaft Project -->
-            <div class="gallery-card" onclick="openProject('crankshaft')">
-                <video muted loop onmouseover="this.play()" onmouseout="this.pause(); this.currentTime=0;">
-                    <source src="assets/projects/crankshaft/crankshaft animated.mp4" type="video/mp4">
-                </video>
-                <div class="gallery-card-overlay">
-                    <div class="gallery-card-title">Crankshaft Assembly</div>
-                    <div style="font-size: 10px; color: var(--comment);">[ Click to Preview ]</div>
-                </div>
-            </div>
+        <div style="margin-top: 30px; text-align: center;">
+            <a href="gallery.html" style="color: var(--orange); font-size: 14px;">// View CAD Gallery &rarr;</a>
         </div>
     </div>
 
@@ -136,40 +156,102 @@
 
     <script>
         const projectData = {
-            'crankshaft': {
-                type: 'gallery',
-                title: 'Crankshaft Assembly',
-                meta: 'Autodesk Fusion',
-                content: `
-                <div class="pinterest-hero">
-                    <div class="hero-media">
-                        <div class="modal-media-container" style="aspect-ratio: 1/1;">
-                            <video controls loop muted autoplay>
-                                <source src="assets/projects/crankshaft/crankshaft animated.mp4" type="video/mp4">
-                            </video>
+            'swarm': {
+                type: 'report',
+                title: 'SwarmGNC: Decentralized UAV Formation Control',
+                meta: 'Python, NumPy, SciPy, Three.js, Plotly | 2026',
+                tabs: ['Overview', '3D Swarm', '2D APF'],
+                content: {
+                    'overview': `
+                    <div class="modal-description">
+                        <p style="font-size: 15px; line-height: 1.8;">
+                            Decentralized multi-agent formation control in cluttered environments. Built a <span style="color: var(--cyan);">6-DOF state-space</span>
+                            quadcopter simulation (RK4 at 50 Hz) with <span style="color: var(--orange);">LQR optimal control</span> via the continuous
+                            algebraic Riccati equation, <span style="color: var(--pink);">Artificial Potential Field</span> obstacle avoidance with 3D
+                            signed-distance sphere repulsion, and <span style="color: var(--green);">graph Laplacian consensus</span> for formation
+                            keeping. Seven autonomous drones navigate a 20 m cubic debris field with 15 obstacles and 8 looping waypoints, rejecting
+                            <span style="color: var(--orange);">Dryden wind turbulence</span> (Gauss-Markov, sigma=2 m/s).
+                        </p>
+                        <div style="margin-top: 15px;">
+                            <a href="https://ajeet-krish.github.io/UAV_swarm/" target="_blank" class="download-btn">
+                                [ Live Site ]
+                            </a>
+                            <a href="https://github.com/ajeet-krish/UAV_swarm" target="_blank" class="download-btn" style="margin-left: 8px;">
+                                [ GitHub Repo ]
+                            </a>
                         </div>
                     </div>
-                    <div class="hero-specs">
-                        <div style="color: var(--cyan); font-weight: bold; margin-bottom: 8px; font-size: 16px;">// Technical Specifications</div>
-                        <ul style="list-style-type: none; padding: 0; font-size: 15px; line-height: 1.8;">
-                            <li><span style="color: var(--purple);">Software:</span> Autodesk Fusion</li>
-                            <li><span style="color: var(--purple);">Components:</span> 12+ Interlocking</li>
-                            <li style="margin-top: 10px;">Detailed assembly focusing on internal combustion stroke mechanics and rotational balancing.</li>
+                    <div class="card" style="border-color: var(--purple); padding: 15px 20px;">
+                        <div style="color: var(--cyan); font-weight: bold; margin-bottom: 8px; font-size: 16px;">// Key Results</div>
+                        <ul style="list-style-type: none; padding: 0; font-size: 14px; line-height: 1.8;">
+                            <li><span style="color: var(--purple);">Formation error:</span> Drops from 26.9 m to 1-3 m steady state within 15-20s</li>
+                            <li><span style="color: var(--purple);">Algebraic connectivity:</span> lambda_2 stays between 4-7 throughout (well above zero)</li>
+                            <li><span style="color: var(--purple);">Optimal gain:</span> k_avoid=4 achieves 0.52 m minimum clearance at 3 m/s cruise</li>
+                            <li><span style="color: var(--purple);">Monte Carlo:</span> Validated robust envelope at k_avoid in [2,5], rho0 in [1.5,4.0]</li>
+                            <li><span style="color: var(--purple);">Control effort:</span> Peaks at 26 N during acquisition, settles to 1-3 N cruise</li>
                         </ul>
                     </div>
-                </div>
-            `
+                `,
+                    '3d swarm': `
+                    <div class="modal-description" style="margin-bottom: 20px;">
+                        <p style="font-size: 15px; line-height: 1.8;">
+                            <span style="color: var(--orange);">Three.js</span> interactive 3D viewer with UnrealBloomPass and CSS2DRenderer neon labels.
+                            Seven drones navigate a 20 m debris field with 15 obstacles and 8 looping waypoints.
+                        </p>
+                    </div>
+                    <div class="figure-container">
+                        <img src="assets/projects/swarm/teaser_3d.png" alt="3D Swarm Viewer">
+                        <div class="figure-caption">// 3D swarm viewer: 7-drone wedge formation with gradient trails, wireframe obstacles, and starfield background</div>
+                    </div>
+                    <div class="card" style="border-color: var(--cyan); padding: 15px 20px;">
+                        <div style="color: var(--cyan); font-weight: bold; margin-bottom: 8px; font-size: 16px;">// Key Metrics</div>
+                        <ul style="list-style-type: none; padding: 0; font-size: 14px; line-height: 1.8;">
+                            <li><span style="color: var(--purple);">Formation error:</span> Converges from 26.9 m to 1-3 m in 15-20s</li>
+                            <li><span style="color: var(--purple);">Connectivity:</span> lambda_2 stays in [4, 7] throughout</li>
+                            <li><span style="color: var(--purple);">Wind rejection:</span> Recovers within 2s after Dryden gust disturbances</li>
+                        </ul>
+                    </div>
+                `,
+                    '2d apf': `
+                    <div class="modal-description" style="margin-bottom: 20px;">
+                        <p style="font-size: 15px; line-height: 1.8;">
+                            Isolated <span style="color: var(--cyan);">APF path planning</span> in a controlled planar corridor enabling
+                            systematic gain characterization and <span style="color: var(--orange);">Monte Carlo safety analysis</span>
+                            across 10 gain values (0.05 to 10).
+                        </p>
+                    </div>
+                    <div class="figure-container">
+                        <img src="assets/projects/swarm/trajectory_facets.png" alt="Trajectory Facets">
+                        <div class="figure-caption">// Gain sweep comparison: 6 gain values through the slalom corridor, from corner-cutting (0.05) to pushback (10)</div>
+                    </div>
+                    <div class="modal-media-container">
+                        <video controls loop muted>
+                            <source src="assets/projects/swarm/apf_path_2d.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="figure-caption" style="margin-top: 8px;">// 2D APF corridor animation at k_avoid=4 showing APF potential contour overlay and terminal HUD</div>
+                    <div class="card" style="border-color: var(--orange); padding: 15px 20px; margin-top: 20px;">
+                        <div style="color: var(--cyan); font-weight: bold; margin-bottom: 8px; font-size: 16px;">// Behavioral Regimes</div>
+                        <ul style="list-style-type: none; padding: 0; font-size: 14px; line-height: 1.8;">
+                            <li><span style="color: var(--purple);">Corner-cutting:</span> k_avoid &lt; 0.5, aggressive shortcuts, 0.17-0.29 m clearance</li>
+                            <li><span style="color: var(--purple);">Stall:</span> k_avoid &approx; 2, local equilibrium at x=6.2 m</li>
+                            <li><span style="color: var(--purple);">Optimal slalom:</span> k_avoid &approx; 4, 0.52 m clearance, balanced path</li>
+                            <li><span style="color: var(--purple);">Pushback:</span> k_avoid &gt;= 6, wide cautious arcs, saturating repulsion</li>
+                        </ul>
+                    </div>
+                `
+                }
             },
             'soccer': {
                 type: 'report',
                 title: 'The Physics of Soccer',
-                meta: 'SU2, ΦFlow, Python | 2026',
+                meta: 'SU2, PhiFlow, Python | 2026',
                 tabs: ['Overview', 'Shooting', 'Tactical', 'Overlap'],
                 content: {
                     'overview': `
                     <div class="modal-description">
                         <p style="font-size: 15px; line-height: 1.8;">
-                            CFD analysis of soccer aerodynamics combining <span style="color: var(--cyan);">ΦFlow</span>
+                            CFD analysis of soccer aerodynamics combining <span style="color: var(--cyan);">PhiFlow</span>
                             (rapid prototyping on structured grids) and <span style="color: var(--orange);">SU2</span>
                             (high-fidelity RANS/URANS finite-volume validation). Covers the <span style="color: var(--pink);">Magnus effect</span>
                             vs <span style="color: var(--green);">knuckleball</span> shot aerodynamics, tactical formation
@@ -189,8 +271,8 @@
                     <div class="card" style="border-color: var(--purple); padding: 15px 20px;">
                         <div style="color: var(--cyan); font-weight: bold; margin-bottom: 8px; font-size: 16px;">// Key Results</div>
                         <ul style="list-style-type: none; padding: 0; font-size: 14px; line-height: 1.8;">
-                            <li><span style="color: var(--purple);">Strouhal match:</span> St within 5% of Williamson 1988 (laminar NS, Re=120–500)</li>
-                            <li><span style="color: var(--purple);">Cd match:</span> Within 3% of Tritton 1959 (no-spin, Re=120–500)</li>
+                            <li><span style="color: var(--purple);">Strouhal match:</span> St within 5% of Williamson 1988 (laminar NS, Re=120-500)</li>
+                            <li><span style="color: var(--purple);">Cd match:</span> Within 3% of Tritton 1959 (no-spin, Re=120-500)</li>
                             <li><span style="color: var(--purple);">Drag reduction:</span> 42.2% at 2m inline gap (fullback drafting)</li>
                             <li><span style="color: var(--purple);">Formation pressure:</span> Center lane: 4-2-3-1 = 93%, 3-5-2 = 100%</li>
                         </ul>
@@ -199,8 +281,8 @@
                     'shooting': `
                     <div class="modal-description" style="margin-bottom: 20px;">
                         <p style="font-size: 15px; line-height: 1.8;">
-                            <span style="color: var(--orange);">ΦFlow</span> simulation at Re ≈ 4×10⁴ comparing
-                            a rotating cylinder (ω=10 rad/s, Magnus effect) vs non-rotating (knuckleball).
+                            <span style="color: var(--orange);">PhiFlow</span> simulation at Re &approx; 4&times;10&sup4; comparing
+                            a rotating cylinder (&omega;=10 rad/s, Magnus effect) vs non-rotating (knuckleball).
                             The inferno colormap runs dark blue (slow) to bright yellow (fast).
                         </p>
                     </div>
@@ -215,7 +297,7 @@
                         <p style="font-size: 14px; line-height: 1.6; margin: 0;">
                             Spin suppresses vortex shedding, producing a steady lateral (Magnus) force: a predictable curving shot.
                             No-spin sheds alternating vortices, creating an unpredictable jitter: the knuckleball.
-                            SU2 RANS SST validates Cd=0.68 (turbulent) against ΦFlow Cd≈1.2 (laminar), bracketing the real behaviour.
+                            SU2 RANS SST validates Cd=0.68 (turbulent) against PhiFlow Cd&approx;1.2 (laminar), bracketing the real behaviour.
                         </p>
                     </div>
                 `,
@@ -271,7 +353,7 @@
                     <div class="modal-description" style="margin-bottom: 20px;">
                         <p style="font-size: 15px; line-height: 1.8;">
                             CFD analysis of the overlapping fullback: two rectangular bluff bodies in tandem
-                            at Re ≈ 2×10⁴. The <span style="color: var(--cyan);">downstream player enters the winger's
+                            at Re &approx; 2&times;10&sup4. The <span style="color: var(--cyan);">downstream player enters the winger's
                             low-pressure wake</span>, producing significant drag reduction. A lateral offset of just
                             0.35 m drops the benefit from 42.2% to 3.9%, showing how critical the in-line overlap
                             path is for conserving energy.
@@ -367,23 +449,75 @@
                 </div>
                 <div class="figure-container">
                     <img src="assets/projects/airfoil/cd_vs_mach.png" alt="Cd vs Mach Sweep">
-                    <div class="figure-caption">// Drag divergence characteristics: baseline vs optimized, M=0.60→0.80 (NeuralFoil sweep)</div>
+                    <div class="figure-caption">// Drag divergence characteristics: baseline vs optimized, M=0.60-0.80 (NeuralFoil sweep)</div>
                 </div>
                 <div class="figure-container">
                     <img src="assets/projects/airfoil/optimization_convergence.png" alt="Optimization Convergence">
                     <div class="figure-caption">// IPOPT convergence: weighted Cd objective drops to 0.00588 in 33 iterations (~0.5s wall time)</div>
                 </div>
                 <div class="card" style="border: 1px dashed var(--current-line); text-align: center; padding: 30px 20px; margin-top: 20px;">
-                    <div style="font-size: 24px; margin-bottom: 8px; color: var(--comment);">&#x1F4F7;</div>
+                    <div style="font-size: 24px; margin-bottom: 8px; color: var(--comment);">+</div>
                     <div style="color: var(--comment); font-size: 13px;">Streamlit dashboard screenshots coming soon</div>
                 </div>
                 <div class="card" style="border: 1px dashed var(--current-line); text-align: center; padding: 30px 20px;">
-                    <div style="font-size: 24px; margin-bottom: 8px; color: var(--comment);">&#x2699;</div>
+                    <div style="font-size: 24px; margin-bottom: 8px; color: var(--comment);">+</div>
                     <div style="color: var(--comment); font-size: 13px;">3D CAD assembly screenshots coming soon</div>
                 </div>
                 <div class="card" style="border: 1px dashed var(--current-line); text-align: center; padding: 30px 20px;">
-                    <div style="font-size: 24px; margin-bottom: 8px; color: var(--comment);">&#x1F4D0;</div>
+                    <div style="font-size: 24px; margin-bottom: 8px; color: var(--comment);">+</div>
                     <div style="color: var(--comment); font-size: 13px;">Engineering drawing screenshots coming soon</div>
+                </div>
+                `
+            },
+            'f1': {
+                type: 'gallery',
+                title: 'F1 Aerodynamics Dashboard',
+                meta: 'Python, FastF1, SU2, Plotly | 2026',
+                content: `
+                <div class="modal-description" style="margin-bottom: 25px;">
+                    <p style="font-size: 15px; line-height: 1.8;">
+                        An <span style="color: var(--orange);">interactive F1 aerodynamics platform</span> connecting first-principles
+                        fluid dynamics to real Formula 1 telemetry. Combines <span style="color: var(--cyan);">FastF1 telemetry</span>
+                        from the 2024 season with <span style="color: var(--green);">analytical aerodynamic models</span> (thin airfoil
+                        theory, ground effect) and <span style="color: var(--pink);">SU2 RANS CFD</span> validation. Covers downforce
+                        breakdown, ride height / porpoising, DRS, cornering, tire strategy, and powertrain analysis.
+                    </p>
+                    <div style="margin-top: 15px;">
+                        <a href="https://ajeet-krish.github.io/F1_Telemetry_Dashboard/" target="_blank" class="download-btn">
+                            [ Live Site ]
+                        </a>
+                        <a href="https://github.com/ajeet-krish/F1_Telemetry_Dashboard" target="_blank" class="download-btn" style="margin-left: 8px;">
+                            [ GitHub Repo ]
+                        </a>
+                    </div>
+                </div>
+                <div class="figure-container">
+                    <img src="assets/projects/f1/downforce/component_breakdown.png" alt="Component Breakdown">
+                    <div class="figure-caption">// Downforce component breakdown across speed range: floor dominates at 47-76%, front and rear wings provide trim control</div>
+                </div>
+                <div class="figure-container">
+                    <img src="assets/projects/f1/downforce/drag_polar.png" alt="Drag Polar">
+                    <div class="figure-caption">// Drag polar with DRS on/off comparison showing L/D ratio shift</div>
+                </div>
+                <div class="figure-container">
+                    <img src="assets/projects/f1/ride_height/cl_contour.png" alt="CL Contour">
+                    <div class="figure-caption">// Ride height sensitivity contour: downforce cliff at critical height, porpoising stability gradient overlay</div>
+                </div>
+                <div class="figure-container">
+                    <img src="assets/projects/f1/cornering/grip_envelope.png" alt="Grip Envelope">
+                    <div class="figure-caption">// 3D grip envelope: lateral G vs longitudinal G vs speed with driver comparison (VER, LEC, HAM)</div>
+                </div>
+                <div class="figure-container">
+                    <img src="assets/projects/f1/cfd/velocity_contour.png" alt="Venturi CFD">
+                    <div class="figure-caption">// Venturi tunnel CFD: velocity contour with moving ground wall, INC RANS SST solver, 17 VTU solutions across 3 parametric sweeps</div>
+                </div>
+                <div class="figure-container">
+                    <img src="assets/projects/f1/cfd/reference_config.png" alt="Front Wing CFD">
+                    <div class="figure-caption">// 3-element inverted front wing: NACA 6412/4410/2412 profiles, structured C-grid, AoA sweep from -20 to +4 deg, reference CL ~ -1.9</div>
+                </div>
+                <div class="figure-container">
+                    <img src="assets/projects/f1/cfd/downforce_vs_v2.png" alt="Downforce vs v^2">
+                    <div class="figure-caption">// Force scaling analysis confirming downforce proportional to v^2 across velocity sweep</div>
                 </div>
                 `
             },
@@ -399,7 +533,7 @@
                             An automated <span style="color: var(--orange);">CFD pipeline</span> solving compressible
                             <span style="color: var(--cyan);">RANS</span> on hybrid C-grid meshes. The project includes
                             validation of <span style="color: var(--green);">NACA 0012</span> aerodynamic coefficients
-                            against Ladson 1988 wind tunnel data, and shape optimization at <span style="color: var(--pink);">α = 4°</span>
+                            against Ladson 1988 wind tunnel data, and shape optimization at <span style="color: var(--pink);">&alpha; = 4&deg;</span>
                             using <span style="color: var(--cyan);">CST parameterization</span>, <span style="color: var(--green);">NeuralFoil</span>,
                             and <span style="color: var(--purple);">SciPy SLSQP</span>.
                         </p>
@@ -416,16 +550,16 @@
                     '2d cfd': `
                     <div class="modal-description" style="margin-bottom: 20px;">
                         <p style="font-size: 15px; line-height: 1.8;">
-                            RANS simulation of NACA 0012 across α=0°–16°.
+                            RANS simulation of NACA 0012 across &alpha;=0&deg;-16&deg;.
                         </p>
                     </div>
                     <div class="figure-container">
                         <img src="assets/projects/airfoil/2D_CFD/velocity_4.png" alt="Velocity AoA 4">
-                        <div class="figure-caption">// Velocity field at AoA = 4°</div>
+                        <div class="figure-caption">// Velocity field at AoA = 4&deg;</div>
                     </div>
                     <div class="figure-container">
                         <img src="assets/projects/airfoil/2D_CFD/pressure_4.png" alt="Pressure AoA 4">
-                        <div class="figure-caption">// Pressure field at AoA = 4°</div>
+                        <div class="figure-caption">// Pressure field at AoA = 4&deg;</div>
                     </div>
                     <div class="figure-container">
                         <img src="assets/projects/airfoil/2D_CFD/drag_polar.png" alt="Drag Polar">
@@ -435,7 +569,7 @@
                     'optimization': `
                     <div class="modal-description" style="margin-bottom: 20px;">
                         <p style="font-size: 15px; line-height: 1.8;">
-                            Optimization of NACA 0012 shape at α=4° using CST parametrization (16 weights) with NeuralFoil.
+                            Optimization of NACA 0012 shape at &alpha;=4&deg; using CST parametrization (16 weights) with NeuralFoil.
                         </p>
                     </div>
                     <div class="figure-container">
@@ -462,7 +596,7 @@
                         </p>
                     </div>
                     <div class="card" style="border: 1px dashed var(--current-line); text-align: center; padding: 30px 20px; margin-top: 20px;">
-                        <div style="font-size: 24px; margin-bottom: 8px; color: var(--comment);">&#x2699;</div>
+                        <div style="font-size: 24px; margin-bottom: 8px; color: var(--comment);">+</div>
                         <div style="color: var(--comment); font-size: 13px;">3D CAD assembly screenshots coming soon</div>
                     </div>
                 `,
@@ -473,7 +607,7 @@
                         </p>
                     </div>
                     <div class="card" style="border: 1px dashed var(--current-line); text-align: center; padding: 30px 20px; margin-top: 20px;">
-                        <div style="font-size: 24px; margin-bottom: 8px; color: var(--comment);">&#x1F4D0;</div>
+                        <div style="font-size: 24px; margin-bottom: 8px; color: var(--comment);">+</div>
                         <div style="color: var(--comment); font-size: 13px;">FEA stress/displacement results coming soon</div>
                     </div>
                 `
@@ -488,7 +622,7 @@
                     'report': `
                     <div class="project-report">
                         <div class="card" style="border-color: var(--orange); text-align: center; padding: 40px 20px;">
-                            <div style="font-size: 48px; margin-bottom: 15px; color: var(--comment);">⚙</div>
+                            <div style="font-size: 48px; margin-bottom: 15px; color: var(--comment);">+</div>
                             <div class="section-header" style="color: var(--orange); font-size: 20px;">// Work in Progress</div>
                             <div class="text-block" style="color: var(--comment);">
                                 Project media (technical drawings, CAD renders, FEA simulations, and MATLAB GUI screenshots) will be uploaded pending publication clearance.

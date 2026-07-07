@@ -15,8 +15,6 @@ This repository contains the source code for my professional portfolio website. 
 To ensure high performance and zero-latency loading for recruiters, this site is built as a **Static Web Application**:
 
 * **Core:** HTML5, CSS3, JavaScript.
-* **Mapping: Leaflet.js (v1.9.4)
-* **Tiles: OpenStreetMap
 * **Theme:** Custom **Dracula Color Palette** for high-contrast, developer-friendly readability.
 * **Typography:** [Meslo LG L](https://github.com/andreberg/Meslo-Font) for a terminal-inspired look.
 * **Hosting:** GitHub Pages (Automated deployment via the `main` branch).
@@ -27,12 +25,12 @@ To ensure high performance and zero-latency loading for recruiters, this site is
 ```text
 .
 ├── index.html          # Homepage & Digital CV
-├── projects.html       # Portfolio of CFD & Mechanical Engineering work
-├── travel.html         # Personal travel logs & mapping
+├── projects.html       # Engineering projects (6 projects, 2x2 grid, modal viewer)
+├── gallery.html        # CAD gallery (crankshaft assembly + placeholders)
 ├── css/
-│   └── main.css        # Global Dracula styles and typography
-└── assets/
-    ├── img/            # Profile picture and travel map icons
-    ├── docs/           # Resume.pdf
-    └── projects/       # Project media (CAD renders, orbital animations, etc.)
+│   └── main.css        # Dracula theme styles
+├── assets/
+│   ├── img/            # Profile picture, map icons
+│   ├── docs/           # Resume.pdf
+│   └── projects/       # Project media per subdirectory (soccer, swarm, f1, etc.)
 ```
