@@ -7,6 +7,7 @@
     <title>Ajeet Krishnasamy | projects.py</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/meslo-lg.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 
 <body>
@@ -36,9 +37,10 @@
                     </div>
                 </div>
                 <div class="wiki-card-body">
-                    Decentralized multi-agent UAV swarm with LQR optimal control, APF obstacle avoidance, and graph Laplacian consensus. Monte Carlo parameter sensitivity analysis across 4 behavioral regimes.
+                    Decentralized multi-agent UAV swarm with LQR optimal control, APF obstacle avoidance, and graph
+                    Laplacian consensus. Monte Carlo parameter sensitivity analysis across 4 behavioral regimes.
                 </div>
-                <div class="card-meta">2026</div>
+                
             </div>
 
             <!-- 2. Airfoil CFD Explorer Card -->
@@ -56,7 +58,7 @@
                     Automated CFD pipeline solving compressible RANS on hybrid C-grid meshes: benchmarking NACA 0012
                     against experimental wind tunnel data, and utilizing CST parameterization for shape optimization.
                 </div>
-                <div class="card-meta">2026</div>
+                
             </div>
 
             <!-- 3. Soccer CFD Card -->
@@ -74,7 +76,7 @@
                     formation pressure mapping
                     across 4 formations, and wake drafting analysis of the overlapping fullback run.
                 </div>
-                <div class="card-meta">2026</div>
+                
             </div>
 
             <!-- 4. F1 Dashboard Card -->
@@ -88,24 +90,28 @@
                     </div>
                 </div>
                 <div class="wiki-card-body">
-                    Interactive F1 aerodynamics platform combining FastF1 telemetry, first-principles analytical models, and SU2 RANS CFD validation. 7 analysis modules across an 11-page Mercedes-themed portfolio.
+                    Interactive F1 aerodynamics platform combining FastF1 telemetry, first-principles analytical models,
+                    and SU2 RANS CFD validation. 7 analysis modules across an 11-page Mercedes-themed portfolio.
                 </div>
-                <div class="card-meta">2026</div>
+                
             </div>
 
             <!-- 5. Capstone Project Card -->
             <div class="wiki-card" onclick="openProject('capstone')">
                 <div class="wiki-card-header">
-                    <div class="wiki-card-title">// Wearable Hip Protector</div>
+                    <div class="wiki-card-title">// The Stack: Hip Protector</div>
                     <div class="wiki-tag-row">
                         <span class="tag" style="color: var(--pink); border: 1px solid var(--pink);">#FEA</span>
                         <span class="tag" style="color: var(--cyan); border: 1px solid var(--cyan);">#MATLAB</span>
                         <span class="tag" style="color: var(--orange); border: 1px solid var(--orange);">#CAD</span>
+                        <span class="tag"
+                            style="color: var(--green); border: 1px solid var(--green);">#SolidWorks</span>
                     </div>
                 </div>
                 <div class="wiki-card-body">
-                    Design and validation of a medical-grade wearable hip protector. Applied anatomical modeling, FEA
-                    impact simulation, and MATLAB-based patient parameterization.
+                    Full lifecycle engineering design of a medical-grade wearable hip protector. Literature review,
+                    conceptual design with decision matrix scoring, Kelvin-Voigt viscoelastic analysis, FEA impact
+                    simulation, and a MATLAB parametrization tool exporting patient-specific geometry to SolidWorks.
                 </div>
                 <div class="card-meta">University of Ottawa | Capstone 2026</div>
             </div>
@@ -116,8 +122,10 @@
                     <div class="wiki-card-title">// 3D Orbital Trajectory Animator</div>
                     <div class="wiki-tag-row">
                         <span class="tag" style="color: var(--cyan); border: 1px solid var(--cyan);">#Python</span>
-                        <span class="tag" style="color: var(--green); border: 1px solid var(--green);">#Matplotlib</span>
-                        <span class="tag" style="color: var(--orange); border: 1px solid var(--orange);">#Astrodynamics</span>
+                        <span class="tag"
+                            style="color: var(--green); border: 1px solid var(--green);">#Matplotlib</span>
+                        <span class="tag"
+                            style="color: var(--orange); border: 1px solid var(--orange);">#Astrodynamics</span>
                     </div>
                 </div>
                 <div class="wiki-card-body">
@@ -126,7 +134,7 @@
                     precession, ground track projection, and parameter sweeps: all generated via a Python package built
                     on PyAstronomy and Matplotlib.
                 </div>
-                <div class="card-meta">2026</div>
+                
             </div>
         </div>
 
@@ -159,27 +167,19 @@
             'swarm': {
                 type: 'report',
                 title: 'SwarmGNC: Decentralized UAV Formation Control',
-                meta: 'Python, NumPy, SciPy, Three.js, Plotly | 2026',
-                tabs: ['Overview', '3D Swarm', '2D APF'],
+                meta: 'Python, NumPy, SciPy, Three.js, Plotly',
+                tabs: ['Overview', '2D', '3D'],
                 content: {
                     'overview': `
                     <div class="modal-description">
                         <p style="font-size: 15px; line-height: 1.8;">
-                            Decentralized multi-agent formation control in cluttered environments. Built a <span style="color: var(--cyan);">6-DOF state-space</span>
-                            quadcopter simulation (RK4 at 50 Hz) with <span style="color: var(--orange);">LQR optimal control</span> via the continuous
-                            algebraic Riccati equation, <span style="color: var(--pink);">Artificial Potential Field</span> obstacle avoidance with 3D
-                            signed-distance sphere repulsion, and <span style="color: var(--green);">graph Laplacian consensus</span> for formation
-                            keeping. Seven autonomous drones navigate a 20 m cubic debris field with 15 obstacles and 8 looping waypoints, rejecting
-                            <span style="color: var(--orange);">Dryden wind turbulence</span> (Gauss-Markov, sigma=2 m/s).
+                            Drones operating in cluttered environments need to balance safety and efficiency. This project explores decentralized formation control through simulation, making the trade-offs between aggressive maneuvering and collision avoidance visible and debuggable before building hardware. The system models how autonomous vehicles can navigate obstacle fields while maintaining formation, with direct applications in drone delivery, search-and-rescue coordination, and autonomous fleet navigation.
                         </p>
                         <div style="margin-top: 15px;">
-                            <a href="https://ajeet-krish.github.io/UAV_swarm/" target="_blank" class="download-btn">
-                                [ Live Site ]
-                            </a>
-                            <a href="https://github.com/ajeet-krish/UAV_swarm" target="_blank" class="download-btn" style="margin-left: 8px;">
-                                [ GitHub Repo ]
-                            </a>
+                            <a href="https://ajeet-krish.github.io/UAV_swarm/" target="_blank" class="download-btn">[ Full Project ]</a>
+                            <a href="https://github.com/ajeet-krish/UAV_swarm" target="_blank" class="download-btn" style="margin-left: 8px;">[ GitHub Repo ]</a>
                         </div>
+                        <p style="font-size: 14px; line-height: 1.6; margin-top: 15px; color: var(--comment);">// Visit the full project for technical details, methodology, and complete documentation.</p>
                     </div>
                     <div class="card" style="border-color: var(--purple); padding: 15px 20px;">
                         <div style="color: var(--cyan); font-weight: bold; margin-bottom: 8px; font-size: 16px;">// Key Results</div>
@@ -192,52 +192,42 @@
                         </ul>
                     </div>
                 `,
-                    '3d swarm': `
+                    '2d': `
                     <div class="modal-description" style="margin-bottom: 20px;">
                         <p style="font-size: 15px; line-height: 1.8;">
-                            <span style="color: var(--orange);">Three.js</span> interactive 3D viewer with UnrealBloomPass and CSS2DRenderer neon labels.
-                            Seven drones navigate a 20 m debris field with 15 obstacles and 8 looping waypoints.
+                            This simulation models how a drone navigates a corridor with walls and obstacles using attractive and repulsive forces. The goal pulls the drone forward while obstacles push it away, and a single gain value controls the balance between safety and efficiency.
                         </p>
-                    </div>
-                    <div class="figure-container">
-                        <img src="assets/projects/swarm/teaser_3d.png" alt="3D Swarm Viewer">
-                        <div class="figure-caption">// 3D swarm viewer: 7-drone wedge formation with gradient trails, wireframe obstacles, and starfield background</div>
-                    </div>
-                    <div class="card" style="border-color: var(--cyan); padding: 15px 20px;">
-                        <div style="color: var(--cyan); font-weight: bold; margin-bottom: 8px; font-size: 16px;">// Key Metrics</div>
-                        <ul style="list-style-type: none; padding: 0; font-size: 14px; line-height: 1.8;">
-                            <li><span style="color: var(--purple);">Formation error:</span> Converges from 26.9 m to 1-3 m in 15-20s</li>
-                            <li><span style="color: var(--purple);">Connectivity:</span> lambda_2 stays in [4, 7] throughout</li>
-                            <li><span style="color: var(--purple);">Wind rejection:</span> Recovers within 2s after Dryden gust disturbances</li>
-                        </ul>
-                    </div>
-                `,
-                    '2d apf': `
-                    <div class="modal-description" style="margin-bottom: 20px;">
-                        <p style="font-size: 15px; line-height: 1.8;">
-                            Isolated <span style="color: var(--cyan);">APF path planning</span> in a controlled planar corridor enabling
-                            systematic gain characterization and <span style="color: var(--orange);">Monte Carlo safety analysis</span>
-                            across 10 gain values (0.05 to 10).
+                        <p style="font-size: 15px; line-height: 1.8; margin-top: 12px;">
+                            Set the gain low and the drone cuts corners close to walls, tight and risky. Set it high and it swerves wide, safe but inefficient. The correct gain depends on the mission. In drone delivery, a conservative gain avoids collisions but wastes battery. In search-and-rescue, a tighter gain gets there faster but increases risk. Simulations like this let engineers test the trade-offs before building hardware.
                         </p>
-                    </div>
-                    <div class="figure-container">
-                        <img src="assets/projects/swarm/trajectory_facets.png" alt="Trajectory Facets">
-                        <div class="figure-caption">// Gain sweep comparison: 6 gain values through the slalom corridor, from corner-cutting (0.05) to pushback (10)</div>
                     </div>
                     <div class="modal-media-container">
                         <video controls loop muted>
-                            <source src="assets/projects/swarm/apf_path_2d.mp4" type="video/mp4">
+                            <source src="assets/projects/swarm/2d simulation.mov" type="video/quicktime">
                         </video>
                     </div>
-                    <div class="figure-caption" style="margin-top: 8px;">// 2D APF corridor animation at k_avoid=4 showing APF potential contour overlay and terminal HUD</div>
-                    <div class="card" style="border-color: var(--orange); padding: 15px 20px; margin-top: 20px;">
-                        <div style="color: var(--cyan); font-weight: bold; margin-bottom: 8px; font-size: 16px;">// Behavioral Regimes</div>
-                        <ul style="list-style-type: none; padding: 0; font-size: 14px; line-height: 1.8;">
-                            <li><span style="color: var(--purple);">Corner-cutting:</span> k_avoid &lt; 0.5, aggressive shortcuts, 0.17-0.29 m clearance</li>
-                            <li><span style="color: var(--purple);">Stall:</span> k_avoid &approx; 2, local equilibrium at x=6.2 m</li>
-                            <li><span style="color: var(--purple);">Optimal slalom:</span> k_avoid &approx; 4, 0.52 m clearance, balanced path</li>
-                            <li><span style="color: var(--purple);">Pushback:</span> k_avoid &gt;= 6, wide cautious arcs, saturating repulsion</li>
-                        </ul>
+                    <div class="figure-container">
+                        <img src="assets/projects/swarm/trajectory.png" alt="Trajectory Overlay">
+                        <div class="figure-caption">// All 10 gain values overlaid on the slalom corridor. Low gains cut corners, intermediate gains stall at the centerline, ka=4 threads the slalom cleanly, and high gains push wide from early repulsion.</div>
+                    </div>
+                    <div class="figure-container">
+                        <img src="assets/projects/swarm/monte_carlo.png" alt="Monte Carlo Analysis">
+                        <div class="figure-caption">// Failure probability across (ka, rho0) space from 20 random obstacle layouts. Dark regions identify the robust design envelope; ka=4, rho0=3.5 lies well inside the safe zone.</div>
+                    </div>
+                `,
+                    '3d': `
+                    <div class="modal-description" style="margin-bottom: 20px;">
+                        <p style="font-size: 15px; line-height: 1.8;">
+                            Seven drones fly a figure-8 through 15 spherical obstacles with no leader commanding the formation. Each drone runs the same local control law and only talks to its neighbors. The system combines three behaviors running simultaneously: each drone steers toward the waypoint sequence, compares position to neighbors to hold formation shape, and avoids obstacles through repulsion proportional to distance.
+                        </p>
+                        <p style="font-size: 15px; line-height: 1.8; margin-top: 12px;">
+                            The formation wedge rotates in 3D aligned with the leader's velocity. When the leader banks or climbs, the wedge rotates with it. This is not a hardcoded animation, the rotation is computed fresh every timestep from the leader's actual velocity vector. This kind of decentralized coordination is relevant to autonomous fleet operations where centralized command is impractical, from drone light shows to planetary exploration swarms.
+                        </p>
+                    </div>
+                    <div class="modal-media-container">
+                        <video controls loop muted>
+                            <source src="assets/projects/swarm/3d_simulation.mp4" type="video/mp4">
+                        </video>
                     </div>
                 `
                 }
@@ -245,7 +235,7 @@
             'soccer': {
                 type: 'report',
                 title: 'The Physics of Soccer',
-                meta: 'SU2, PhiFlow, Python | 2026',
+                meta: 'SU2, PhiFlow, Python',
                 tabs: ['Overview', 'Shooting', 'Tactical', 'Overlap'],
                 content: {
                     'overview': `
@@ -260,13 +250,10 @@
                             at 2m gap.
                         </p>
                         <div style="margin-top: 15px;">
-                            <a href="https://ajeet-krish.github.io/Soccer-CFD/" target="_blank" class="download-btn">
-                                [ Live Site ]
-                            </a>
-                            <a href="https://github.com/ajeet-krish/Soccer-CFD" target="_blank" class="download-btn" style="margin-left: 8px;">
-                                [ GitHub Repo ]
-                            </a>
+                            <a href="https://ajeet-krish.github.io/Soccer-CFD/" target="_blank" class="download-btn">[ Full Project ]</a>
+                            <a href="https://github.com/ajeet-krish/Soccer-CFD" target="_blank" class="download-btn" style="margin-left: 8px;">[ GitHub Repo ]</a>
                         </div>
+                        <p style="font-size: 14px; line-height: 1.6; margin-top: 15px; color: var(--comment);">// Visit the full project for technical details, methodology, and complete documentation.</p>
                     </div>
                     <div class="card" style="border-color: var(--purple); padding: 15px 20px;">
                         <div style="color: var(--cyan); font-weight: bold; margin-bottom: 8px; font-size: 16px;">// Key Results</div>
@@ -382,7 +369,7 @@
             'orbital': {
                 type: 'gallery',
                 title: '3D Orbital Trajectory Animator',
-                meta: 'Python, PyAstronomy, Matplotlib, NumPy | 2026',
+                meta: 'Python, PyAstronomy, Matplotlib, NumPy',
                 content: `
                 <div class="modal-description" style="margin-bottom: 25px;">
                     <p style="font-size: 15px; line-height: 1.8;">
@@ -397,13 +384,10 @@
                         <span style="color: var(--pink);">parameter sweeps</span> of eccentricity and inclination.
                     </p>
                     <div style="margin-top: 15px;">
-                        <a href="https://ajeet-krish.github.io/3D-Orbital-Trajectory-Animator/" target="_blank" class="download-btn">
-                            [ Live Site ]
-                        </a>
-                        <a href="https://github.com/ajeet-krish/3D-Orbital-Trajectory-Animator" target="_blank" class="download-btn" style="margin-left: 8px;">
-                            [ GitHub Repo ]
-                        </a>
+                        <a href="https://ajeet-krish.github.io/3D-Orbital-Trajectory-Animator/" target="_blank" class="download-btn">[ Full Project ]</a>
+                        <a href="https://github.com/ajeet-krish/3D-Orbital-Trajectory-Animator" target="_blank" class="download-btn" style="margin-left: 8px;">[ GitHub Repo ]</a>
                     </div>
+                    <p style="font-size: 14px; line-height: 1.6; margin-top: 15px; color: var(--comment);">// Visit the full project for technical details, methodology, and complete documentation.</p>
                 </div>
                 <div class="figure-container">
                     <img src="assets/projects/orbital/outputs/multi_orbit.gif" alt="Multi-Orbit Animation">
@@ -419,60 +403,10 @@
                 </div>
             `
             },
-            'airfoil': {
-                type: 'gallery',
-                title: 'Airfoil Optimization Dashboard',
-                meta: 'AeroSandbox, CadQuery, Streamlit | 2026',
-                content: `
-                <div class="modal-description" style="margin-bottom: 25px;">
-                    <p style="font-size: 15px; line-height: 1.8;">
-                        A <span style="color: var(--orange);">Python</span>-based multi-point transonic airfoil
-                        optimization pipeline using <span style="color: var(--cyan);">CST parameterization</span>,
-                        <span style="color: var(--green);">NeuralFoil</span>, and <span style="color: var(--pink);">IPOPT</span>.
-                        Generates a <span style="color: var(--cyan);">multi-body STEP assembly</span> via CadQuery,
-                        portfolio-quality plots, and an interactive
-                        <span style="color: var(--green);">Streamlit dashboard</span> with
-                        <span style="color: var(--purple);">VLM post-analysis</span> for real-time design exploration.
-                    </p>
-                    <div style="margin-top: 15px;">
-                        <a href="https://airfoil-optimizer.streamlit.app/" target="_blank" class="download-btn">
-                            [ Open Dashboard ]
-                        </a>
-                        <a href="https://github.com/ajeet-krish/Airfoil-Optimization-Dashboard" target="_blank" class="download-btn" style="margin-left: 8px;">
-                            [ GitHub Repo ]
-                        </a>
-                    </div>
-                </div>
-                <div class="figure-container">
-                    <img src="assets/projects/airfoil/airfoil_comparison.png" alt="Airfoil Comparison">
-                    <div class="figure-caption">// Initial guess vs optimized transonic airfoil: CST + NeuralFoil + IPOPT (33 iters)</div>
-                </div>
-                <div class="figure-container">
-                    <img src="assets/projects/airfoil/cd_vs_mach.png" alt="Cd vs Mach Sweep">
-                    <div class="figure-caption">// Drag divergence characteristics: baseline vs optimized, M=0.60-0.80 (NeuralFoil sweep)</div>
-                </div>
-                <div class="figure-container">
-                    <img src="assets/projects/airfoil/optimization_convergence.png" alt="Optimization Convergence">
-                    <div class="figure-caption">// IPOPT convergence: weighted Cd objective drops to 0.00588 in 33 iterations (~0.5s wall time)</div>
-                </div>
-                <div class="card" style="border: 1px dashed var(--current-line); text-align: center; padding: 30px 20px; margin-top: 20px;">
-                    <div style="font-size: 24px; margin-bottom: 8px; color: var(--comment);">+</div>
-                    <div style="color: var(--comment); font-size: 13px;">Streamlit dashboard screenshots coming soon</div>
-                </div>
-                <div class="card" style="border: 1px dashed var(--current-line); text-align: center; padding: 30px 20px;">
-                    <div style="font-size: 24px; margin-bottom: 8px; color: var(--comment);">+</div>
-                    <div style="color: var(--comment); font-size: 13px;">3D CAD assembly screenshots coming soon</div>
-                </div>
-                <div class="card" style="border: 1px dashed var(--current-line); text-align: center; padding: 30px 20px;">
-                    <div style="font-size: 24px; margin-bottom: 8px; color: var(--comment);">+</div>
-                    <div style="color: var(--comment); font-size: 13px;">Engineering drawing screenshots coming soon</div>
-                </div>
-                `
-            },
             'f1': {
                 type: 'gallery',
                 title: 'F1 Aerodynamics Dashboard',
-                meta: 'Python, FastF1, SU2, Plotly | 2026',
+                meta: 'Python, FastF1, SU2, Plotly',
                 content: `
                 <div class="modal-description" style="margin-bottom: 25px;">
                     <p style="font-size: 15px; line-height: 1.8;">
@@ -483,13 +417,10 @@
                         breakdown, ride height / porpoising, DRS, cornering, tire strategy, and powertrain analysis.
                     </p>
                     <div style="margin-top: 15px;">
-                        <a href="https://ajeet-krish.github.io/F1_Telemetry_Dashboard/" target="_blank" class="download-btn">
-                            [ Live Site ]
-                        </a>
-                        <a href="https://github.com/ajeet-krish/F1_Telemetry_Dashboard" target="_blank" class="download-btn" style="margin-left: 8px;">
-                            [ GitHub Repo ]
-                        </a>
+                        <a href="https://ajeet-krish.github.io/F1_Telemetry_Dashboard/" target="_blank" class="download-btn">[ Full Project ]</a>
+                        <a href="https://github.com/ajeet-krish/F1_Telemetry_Dashboard" target="_blank" class="download-btn" style="margin-left: 8px;">[ GitHub Repo ]</a>
                     </div>
+                    <p style="font-size: 14px; line-height: 1.6; margin-top: 15px; color: var(--comment);">// Visit the full project for technical details, methodology, and complete documentation.</p>
                 </div>
                 <div class="figure-container">
                     <img src="assets/projects/f1/downforce/component_breakdown.png" alt="Component Breakdown">
@@ -524,8 +455,8 @@
             'airfoil-cfd': {
                 type: 'report',
                 title: 'Airfoil CFD Explorer',
-                meta: 'Python, SU2, NeuralFoil, PyVista | 2026',
-                tabs: ['Overview', '2D CFD', 'Optimization', 'CAD', 'FEA'],
+                meta: 'Python, SU2, NeuralFoil, PyVista',
+                tabs: ['Overview', '2D CFD', 'Optimization'],
                 content: {
                     'overview': `
                     <div class="modal-description">
@@ -538,13 +469,10 @@
                             and <span style="color: var(--purple);">SciPy SLSQP</span>.
                         </p>
                         <div style="margin-top: 15px;">
-                            <a href="https://ajeet-krish.github.io/Airfoil_CFD/" target="_blank" class="download-btn">
-                                [ Live Site ]
-                            </a>
-                            <a href="https://github.com/ajeet-krish/Airfoil_CFD" target="_blank" class="download-btn" style="margin-left: 8px;">
-                                [ GitHub Repo ]
-                            </a>
+                            <a href="https://ajeet-krish.github.io/Airfoil_CFD/" target="_blank" class="download-btn">[ Full Project ]</a>
+                            <a href="https://github.com/ajeet-krish/Airfoil_CFD" target="_blank" class="download-btn" style="margin-left: 8px;">[ GitHub Repo ]</a>
                         </div>
+                        <p style="font-size: 14px; line-height: 1.6; margin-top: 15px; color: var(--comment);">// Visit the full project for technical details, methodology, and complete documentation.</p>
                     </div>
                 `,
                     '2d cfd': `
@@ -588,61 +516,79 @@
                         <img src="assets/projects/airfoil/Optimization/convergence_4.png" alt="Convergence">
                         <div class="figure-caption">// Optimization convergence history</div>
                     </div>
-                `,
-                    'cad': `
-                    <div class="modal-description" style="margin-bottom: 20px;">
-                        <p style="font-size: 15px; line-height: 1.8;">
-                            Automated generation of 3D wing assemblies from 2D optimized coordinates.
-                        </p>
-                    </div>
-                    <div class="card" style="border: 1px dashed var(--current-line); text-align: center; padding: 30px 20px; margin-top: 20px;">
-                        <div style="font-size: 24px; margin-bottom: 8px; color: var(--comment);">+</div>
-                        <div style="color: var(--comment); font-size: 13px;">3D CAD assembly screenshots coming soon</div>
-                    </div>
-                `,
-                    'fea': `
-                    <div class="modal-description" style="margin-bottom: 20px;">
-                        <p style="font-size: 15px; line-height: 1.8;">
-                            Structural analysis of the optimized wing section under aerodynamic loading.
-                        </p>
-                    </div>
-                    <div class="card" style="border: 1px dashed var(--current-line); text-align: center; padding: 30px 20px; margin-top: 20px;">
-                        <div style="font-size: 24px; margin-bottom: 8px; color: var(--comment);">+</div>
-                        <div style="color: var(--comment); font-size: 13px;">FEA stress/displacement results coming soon</div>
-                    </div>
                 `
                 }
             },
             'capstone': {
                 type: 'report',
-                title: 'Wearable Hip Protector Design',
-                meta: 'University of Ottawa | Capstone 2026',
-                tabs: ['Report', 'Specs'],
+                title: 'The Stack: Wearable Hip Protector',
+                meta: 'SolidWorks, MATLAB, Ansys FEA | Capstone 2026',
+                tabs: ['Gallery', 'Full Report'],
                 content: {
-                    'report': `
+                    'gallery': `
                     <div class="project-report">
-                        <div class="card" style="border-color: var(--orange); text-align: center; padding: 40px 20px;">
-                            <div style="font-size: 48px; margin-bottom: 15px; color: var(--comment);">+</div>
-                            <div class="section-header" style="color: var(--orange); font-size: 20px;">// Work in Progress</div>
-                            <div class="text-block" style="color: var(--comment);">
-                                Project media (technical drawings, CAD renders, FEA simulations, and MATLAB GUI screenshots) will be uploaded pending publication clearance.
+                        <div class="modal-description">
+                            <p style="font-size: 15px; line-height: 1.8;">
+                                Hip fractures from lateral falls are a leading cause of morbidity in adults 65+, with healthcare costs exceeding $25B annually. Existing protectors fail not mechanically, but behaviorally: poor compliance due to discomfort. The Stack addresses this through a <span style="color: var(--cyan);">horseshoe-shaped multilayer pad</span> (STF core + TPU shell) integrated into a garment with Velcro adjustability and an open-crotch design for dignity. A <span style="color: var(--pink);">MATLAB parametrization tool</span> converts 5 patient inputs into patient-specific SolidWorks geometry via an iterative optimization loop.
+                            </p>
+                        </div>
+                        <div class="card" style="border-color: var(--purple); padding: 12px 16px;">
+                            <div style="color: var(--cyan); font-weight: bold; margin-bottom: 6px; font-size: 15px;">// Key Results</div>
+                            <ul style="list-style-type: none; padding: 0; font-size: 13px; line-height: 1.8;">
+                                <li><span style="color: var(--purple);">Attenuation target:</span> 35% minimum (iterative thickness optimization)</li>
+                                <li><span style="color: var(--purple);">Device mass:</span> ~510 g (under 600 g limit) &nbsp;|&nbsp; <span style="color: var(--purple);">Cost:</span> $25-40/unit, retail $70-120 CAD</li>
+                                <li><span style="color: var(--purple);">Healthcare ROI:</span> Cost-benefit ratio exceeds 25:1 vs prevented fractures</li>
+                                <li><span style="color: var(--purple);">Sizing:</span> 5th-95th percentile (hip circ 85-115 cm) &nbsp;|&nbsp; <span style="color: var(--purple);">Max t_pad:</span> 24 mm</li>
+                            </ul>
+                        </div>
+                        <div class="media-grid-vary">
+                            <div class="figure-container">
+                                <img src="assets/projects/capstone/media/design_overview.png" alt="Design Overview">
+                                <div class="figure-caption">// Final Design Overview</div>
                             </div>
-                            <div style="margin-top: 20px;">
-                                <span class="tag" style="color: var(--pink); border: 1px solid var(--pink);">#FEA</span>
-                                <span class="tag" style="color: var(--cyan); border: 1px solid var(--cyan);">#MATLAB</span>
-                                <span class="tag" style="color: var(--orange); border: 1px solid var(--orange);">#CAD</span>
-                                <span class="tag" style="color: var(--green); border: 1px solid var(--green);">#SolidWorks</span>
+                            <div class="figure-container">
+                                <img src="assets/projects/capstone/media/pad_cad.png" alt="Pad CAD Isometric">
+                                <div class="figure-caption">// Detailed engineering drawings of the side padding composition and SolidWorks model of the side padding</div>
+                            </div>
+                            <div class="figure-container">
+                                <img src="assets/projects/capstone/media/pad_cad_ortho.png" alt="Pad CAD Orthographic">
+                                <div class="figure-caption">// Orthographic view of the pad</div>
                             </div>
                         </div>
-                    </div>
-                `,
-                    'specs': `
-                    <div class="modal-description">
-                        <ul style="list-style-type: none; padding: 0;">
-                            <li><span style="color: var(--purple);">Software:</span> SolidWorks, Ansys FEA, MATLAB</li>
-                            <li><span style="color: var(--purple);">Focus:</span> Biomechanics, Impact Absorption, Automation</li>
-                            <li><span style="color: var(--purple);">Outcome:</span> Validated prototype with patient-specific sizing logic</li>
-                        </ul>
+                        <div class="media-grid-3">
+                            <div class="figure-container">
+                                <img src="assets/projects/capstone/media/layer_sectional.png" alt="Layer Cross Section">
+                                <div class="figure-caption">// Sectional side view of the device with layer composition detail</div>
+                            </div>
+                            <div class="figure-container">
+                                <img src="assets/projects/capstone/media/layer_exploded.png" alt="Layer Exploded View">
+                                <div class="figure-caption">// Exploded view of the multilayer stack showing material interfaces</div>
+                            </div>
+                            <div class="figure-container">
+                                <img src="assets/projects/capstone/media/harness_sectional.jpg" alt="Harness Sectional">
+                                <div class="figure-caption">// Garment integration: Velcro waistband and thigh straps, nylon-spandex textile, open-crotch design</div>
+                            </div>
+                        </div>
+                        <div class="media-grid-wide">
+                            <div class="figure-container">
+                                <img src="assets/projects/capstone/media/pad_static_fea.png" alt="Static FEA">
+                                <div class="figure-caption">// Set up for static simulation, where the purple arrows represent the force of 1120N and the green arrows represent the fixed geometry</div>
+                            </div>
+                            <div class="figure-container">
+                                <img src="assets/projects/capstone/media/pad_simulation_woman.png" alt="Drop Test Simulation">
+                                <div class="figure-caption">// Static simulation of a 70 kg women focusing on the displacement</div>
+                            </div>
+                            <div class="figure-container">
+                                <img src="assets/projects/capstone/media/matlab_gui.png" alt="MATLAB GUI">
+                                <div class="figure-caption">// MATLAB GUI: patient inputs, geometry computation, force analysis, SolidWorks export</div>
+                            </div>
+                        </div>
+                        <div class="media-grid-full">
+                            <div class="figure-container">
+                                <img src="assets/projects/capstone/media/optimization_loop.png" alt="Optimization Loop">
+                                <div class="figure-caption">// Iterative optimization process: 14 mm start, 0.5 mm steps, terminates at 35% attenuation or 24 mm max</div>
+                            </div>
+                        </div>
                     </div>
                 `
                 }
@@ -699,6 +645,24 @@
                     btn.classList.add('active');
                 }
             });
+
+            // Markdown-powered Full Report tab
+            if (tabKey === 'full report') {
+                body.style.padding = '20px';
+                body.innerHTML = '<div style="text-align:center;padding:40px;color:var(--comment);">Loading design document...</div>';
+                fetch('assets/projects/capstone/PROJECT_CAPSTONE.md')
+                    .then(res => {
+                        if (!res.ok) throw new Error('Failed to fetch');
+                        return res.text();
+                    })
+                    .then(md => {
+                        body.innerHTML = '<div class="markdown-body">' + marked.parse(md) + '</div>';
+                    })
+                    .catch(() => {
+                        body.innerHTML = '<div style="text-align:center;padding:40px;color:var(--orange);">Failed to load design document.</div>';
+                    });
+                return;
+            }
 
             // Update Content
             body.innerHTML = project.content[tabKey];

@@ -28,9 +28,12 @@ To ensure high performance and zero-latency loading for recruiters, this site is
 ├── projects.html       # Engineering projects (6 projects, 2x2 grid, modal viewer)
 ├── gallery.html        # CAD gallery (crankshaft assembly + placeholders)
 ├── css/
-│   └── main.css        # Dracula theme styles
+│   └── main.css        # Dracula theme styles (862 lines, 9 sections)
 ├── assets/
 │   ├── img/            # Profile picture, map icons
 │   ├── docs/           # Resume.pdf
-│   └── projects/       # Project media per subdirectory (soccer, swarm, f1, etc.)
+│   └── projects/       # Project media per subdirectory (soccer, swarm, f1, capstone, orbital, etc.)
+├── pyproject.toml      # Python project (offline map generation only)
+├── uv.lock
+├── CPP_PROJECT_PLAN.md # C++ project roadmap (gitignored)
 ```
