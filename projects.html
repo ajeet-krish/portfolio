@@ -26,7 +26,25 @@
         <div class="section-header" style="color: var(--purple);"># Engineering Projects</div>
 
         <div class="wiki-grid">
-            <!-- 1. SwarmGNC Card -->
+            <!-- 1. AK-Vortex CFD Solver Card -->
+            <div class="wiki-card" onclick="openProject('cfd-solver')">
+                <div class="wiki-card-header">
+                    <div class="wiki-card-title">// AK-Vortex: C++ LBM CFD Solver</div>
+                    <div class="wiki-tag-row">
+                        <span class="tag" style="color: var(--cyan); border: 1px solid var(--cyan);">#C++</span>
+                        <span class="tag" style="color: var(--orange); border: 1px solid var(--orange);">#Python</span>
+                        <span class="tag" style="color: var(--pink); border: 1px solid var(--pink);">#CFD</span>
+                    </div>
+                </div>
+                <div class="wiki-card-body">
+                    A from-scratch D2Q9 Lattice Boltzmann solver in C++20: Multi-Relaxation-Time collision,
+                    Bouzidi curved boundaries, Smagorinsky LES, and 15 canonical validation cases with OpenMP
+                    parallel collision streaming and a Google Test suite.
+                </div>
+
+            </div>
+
+            <!-- 2. SwarmGNC Card -->
             <div class="wiki-card" onclick="openProject('swarm')">
                 <div class="wiki-card-header">
                     <div class="wiki-card-title">// SwarmGNC: Decentralized UAV Formation Control</div>
@@ -43,7 +61,7 @@
                 
             </div>
 
-            <!-- 2. Airfoil CFD Explorer Card -->
+            <!-- 3. Airfoil CFD Explorer Card -->
             <div class="wiki-card" onclick="openProject('airfoil-cfd')">
                 <div class="wiki-card-header">
                     <div class="wiki-card-title">// Airfoil CFD Explorer: Automated Aerodynamic Analysis & Shape
@@ -61,42 +79,7 @@
                 
             </div>
 
-            <!-- 3. Soccer CFD Card -->
-            <div class="wiki-card" onclick="openProject('soccer')">
-                <div class="wiki-card-header">
-                    <div class="wiki-card-title">// The Aerodynamics of Soccer: CFD Analysis of Spin, Wake, and Tactical
-                        Flow</div>
-                    <div class="wiki-tag-row">
-                        <span class="tag" style="color: var(--pink); border: 1px solid var(--pink);">#CFD</span>
-                        <span class="tag" style="color: var(--orange); border: 1px solid var(--orange);">#Python</span>
-                    </div>
-                </div>
-                <div class="wiki-card-body">
-                    CFD analysis of soccer aerodynamics. Compares the Magnus effect vs knuckleball shots, tactical
-                    formation pressure mapping
-                    across 4 formations, and wake drafting analysis of the overlapping fullback run.
-                </div>
-                
-            </div>
-
-            <!-- 4. F1 Dashboard Card -->
-            <div class="wiki-card" onclick="openProject('f1')">
-                <div class="wiki-card-header">
-                    <div class="wiki-card-title">// F1 Aerodynamics Dashboard</div>
-                    <div class="wiki-tag-row">
-                        <span class="tag" style="color: var(--cyan); border: 1px solid var(--cyan);">#Python</span>
-                        <span class="tag" style="color: var(--orange); border: 1px solid var(--orange);">#CFD</span>
-                        <span class="tag" style="color: var(--green); border: 1px solid var(--green);">#Telemetry</span>
-                    </div>
-                </div>
-                <div class="wiki-card-body">
-                    Interactive F1 aerodynamics platform combining FastF1 telemetry, first-principles analytical models,
-                    and SU2 RANS CFD validation. 7 analysis modules across an 11-page Mercedes-themed portfolio.
-                </div>
-                
-            </div>
-
-            <!-- 5. Capstone Project Card -->
+            <!-- 4. Hip Protector Capstone Card -->
             <div class="wiki-card" onclick="openProject('capstone')">
                 <div class="wiki-card-header">
                     <div class="wiki-card-title">// The Stack: Hip Protector</div>
@@ -116,7 +99,42 @@
                 <div class="card-meta">University of Ottawa | Capstone 2026</div>
             </div>
 
-            <!-- 6. Orbital Trajectory Animator Card -->
+            <!-- 5. Soccer CFD Card -->
+            <div class="wiki-card" onclick="openProject('soccer')">
+                <div class="wiki-card-header">
+                    <div class="wiki-card-title">// The Aerodynamics of Soccer: CFD Analysis of Spin, Wake, and Tactical
+                        Flow</div>
+                    <div class="wiki-tag-row">
+                        <span class="tag" style="color: var(--pink); border: 1px solid var(--pink);">#CFD</span>
+                        <span class="tag" style="color: var(--orange); border: 1px solid var(--orange);">#Python</span>
+                    </div>
+                </div>
+                <div class="wiki-card-body">
+                    CFD analysis of soccer aerodynamics. Compares the Magnus effect vs knuckleball shots, tactical
+                    formation pressure mapping
+                    across 4 formations, and wake drafting analysis of the overlapping fullback run.
+                </div>
+                
+            </div>
+
+            <!-- 6. F1 Dashboard Card -->
+            <div class="wiki-card" onclick="openProject('f1')">
+                <div class="wiki-card-header">
+                    <div class="wiki-card-title">// F1 Aerodynamics Dashboard</div>
+                    <div class="wiki-tag-row">
+                        <span class="tag" style="color: var(--cyan); border: 1px solid var(--cyan);">#Python</span>
+                        <span class="tag" style="color: var(--orange); border: 1px solid var(--orange);">#CFD</span>
+                        <span class="tag" style="color: var(--green); border: 1px solid var(--green);">#Telemetry</span>
+                    </div>
+                </div>
+                <div class="wiki-card-body">
+                    Interactive F1 aerodynamics platform combining FastF1 telemetry, first-principles analytical models,
+                    and SU2 RANS CFD validation. 7 analysis modules across an 11-page Mercedes-themed portfolio.
+                </div>
+                
+            </div>
+
+            <!-- 7. Orbital Trajectory Animator Card -->
             <div class="wiki-card" onclick="openProject('orbital')">
                 <div class="wiki-card-header">
                     <div class="wiki-card-title">// 3D Orbital Trajectory Animator</div>
@@ -164,6 +182,158 @@
 
     <script>
         const projectData = {
+            'cfd-solver': {
+                type: 'report',
+                title: 'AK-Vortex: High-Performance C++ Lattice Boltzmann CFD Solver',
+                meta: 'C++, Python, CFD',
+                tabs: ['Overview', 'Validation', 'Cases'],
+                content: {
+                    'overview': `
+                    <div class="modal-description">
+                        <p style="font-size: 15px; line-height: 1.8;">
+                            Most production CFD tools (OpenFOAM, SU2) are large, opaque codebases. AK-Vortex is a
+                            from-scratch <span style="color: var(--orange);">D2Q9 Lattice Boltzmann Method</span> solver
+                            written in <span style="color: var(--cyan);">C++20</span> to make the fundamental machinery
+                            of a flow simulator fully transparent and fast. It demonstrates high-performance computing
+                            discipline (flat 1D memory layout, <span style="color: var(--green);">OpenMP</span>
+                            parallel collision and streaming) and core CFD fundamentals (MRT collision operator,
+                            Bouzidi interpolated bounce-back for curved boundaries, and a Smagorinsky LES subgrid model).
+                        </p>
+                        <p style="font-size: 15px; line-height: 1.8; margin-top: 12px;">
+                            Rather than chase one exotic flow, the project validates the solver against a library of
+                            <span style="color: var(--purple);">standard benchmark cases</span> from the fluid mechanics
+                            literature. Each case is rendered as a visible flow field (velocity contours and streamlines)
+                            so the physics is directly inspectable. The build is backed by a Google Test suite and
+                            continuous integration on macOS and Ubuntu.
+                        </p>
+                        <div style="margin-top: 15px;">
+                            <a href="https://ajeet-krish.github.io/lbm-2d/" target="_blank" class="download-btn">[ Full Project ]</a>
+                            <a href="https://github.com/ajeet-krish/lbm-2d" target="_blank" class="download-btn" style="margin-left: 8px;">[ GitHub Repo ]</a>
+                        </div>
+                        <p style="font-size: 14px; line-height: 1.6; margin-top: 15px; color: var(--comment);">// Visit the full project for interactive field viewers, theory write-ups, and the complete case library.</p>
+                    </div>
+                    <div class="card" style="border-color: var(--purple); padding: 15px 20px;">
+                        <div style="color: var(--cyan); font-weight: bold; margin-bottom: 8px; font-size: 16px;">// Key Features</div>
+                        <ul style="list-style-type: none; padding: 0; font-size: 14px; line-height: 1.8;">
+                            <li><span style="color: var(--purple);">Collision:</span> Multi-Relaxation-Time (MRT) operator, BGK fallback, stable to Re ~ 1000+</li>
+                            <li><span style="color: var(--purple);">Boundaries:</span> Bouzidi interpolated bounce-back for smooth curves and polygons</li>
+                            <li><span style="color: var(--purple);">Turbulence:</span> Smagorinsky LES with auto-activation when tau &lt; 0.55</li>
+                            <li><span style="color: var(--purple);">Performance:</span> Flat std::vector layout, OpenMP collapse(2) collision and streaming</li>
+                            <li><span style="color: var(--purple);">Validation:</span> 15 canonical cases with a 12-test Google Test suite and CI</li>
+                        </ul>
+                    </div>
+                `,
+                    'validation': `
+                    <div class="modal-description" style="margin-bottom: 20px;">
+                        <p style="font-size: 15px; line-height: 1.8;">
+                            The solver is validated against a set of <span style="color: var(--purple);">standard fluid
+                            mechanics benchmarks</span>, each with a well-established literature reference. Metrics below
+                            are extracted directly from the simulation via momentum exchange and compared to the cited
+                            experimental or high-fidelity numerical results.
+                        </p>
+                    </div>
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse; font-size: 13px; color: var(--foreground);">
+                            <tr style="border-bottom: 1px solid var(--current-line);">
+                                <th style="padding: 6px 10px; text-align: left; color: var(--purple);">Benchmark Case</th>
+                                <th style="padding: 6px 10px; text-align: center; color: var(--purple);">Re Range</th>
+                                <th style="padding: 6px 10px; text-align: left; color: var(--purple);">Key Metric</th>
+                                <th style="padding: 6px 10px; text-align: left; color: var(--purple);">Literature</th>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--current-line);">
+                                <td style="padding: 6px 10px;">Flat plate boundary layer</td>
+                                <td style="padding: 6px 10px; text-align: center;">500-2000</td>
+                                <td style="padding: 6px 10px;">Cf, Cd, Cl vs AoA</td>
+                                <td style="padding: 6px 10px;">Blasius 1908, thin-airfoil theory</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--current-line);">
+                                <td style="padding: 6px 10px;">Cylinder wake</td>
+                                <td style="padding: 6px 10px; text-align: center;">100-200</td>
+                                <td style="padding: 6px 10px;">St, Cd</td>
+                                <td style="padding: 6px 10px;">Williamson 1988, Tritton 1959</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--current-line);">
+                                <td style="padding: 6px 10px;">Square cylinder</td>
+                                <td style="padding: 6px 10px; text-align: center;">200</td>
+                                <td style="padding: 6px 10px;">Cd, St</td>
+                                <td style="padding: 6px 10px;">Lyn et al. 1995 (ERCOFTAC 043)</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--current-line);">
+                                <td style="padding: 6px 10px;">Lid-driven cavity</td>
+                                <td style="padding: 6px 10px; text-align: center;">100-1000</td>
+                                <td style="padding: 6px 10px;">u-profile</td>
+                                <td style="padding: 6px 10px;">Ghia, Ghia & Shin 1982</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--current-line);">
+                                <td style="padding: 6px 10px;">Backward-facing step</td>
+                                <td style="padding: 6px 10px; text-align: center;">100-400</td>
+                                <td style="padding: 6px 10px;">Xr / H</td>
+                                <td style="padding: 6px 10px;">Armaly et al. 1983</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--current-line);">
+                                <td style="padding: 6px 10px;">Orifice plate</td>
+                                <td style="padding: 6px 10px; text-align: center;">100</td>
+                                <td style="padding: 6px 10px;">Loss coeff K</td>
+                                <td style="padding: 6px 10px;">ISO 5167, Idelchik 2006</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--current-line);">
+                                <td style="padding: 6px 10px;">Periodic hills</td>
+                                <td style="padding: 6px 10px; text-align: center;">100-2800</td>
+                                <td style="padding: 6px 10px;">Reattachment, U-profile</td>
+                                <td style="padding: 6px 10px;">Moser / Kim / Moin 1993</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--current-line);">
+                                <td style="padding: 6px 10px;">Rotating cylinder</td>
+                                <td style="padding: 6px 10px; text-align: center;">100</td>
+                                <td style="padding: 6px 10px;">Cl vs omega</td>
+                                <td style="padding: 6px 10px;">Kutta-Joukowski theorem</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 6px 10px;">Urban canyon</td>
+                                <td style="padding: 6px 10px; text-align: center;">100</td>
+                                <td style="padding: 6px 10px;">Flow regime</td>
+                                <td style="padding: 6px 10px;">Oke 1988</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card" style="border-color: var(--green); padding: 15px 20px; margin-top: 20px;">
+                        <div style="color: var(--cyan); font-weight: bold; margin-bottom: 8px; font-size: 16px;">// Sample Validated Results</div>
+                        <ul style="list-style-type: none; padding: 0; font-size: 14px; line-height: 1.8;">
+                            <li><span style="color: var(--purple);">Cylinder Re=100:</span> Cd = 1.774 (validated vs Tritton)</li>
+                            <li><span style="color: var(--purple);">Square cylinder Re=200:</span> Cd = 1.157, Cl = 0.47 (vs ERCOFTAC 043)</li>
+                            <li><span style="color: var(--purple);">Flat plate AoA=0, Re=1000:</span> Cd ~ 0.026 (vs Blasius)</li>
+                            <li><span style="color: var(--purple);">Sports ball (dimpled):</span> Cd = 1.902 at Re=100 (roughness effect)</li>
+                        </ul>
+                    </div>
+                `,
+                    'cases': `
+                    <div class="modal-description" style="margin-bottom: 20px;">
+                        <p style="font-size: 15px; line-height: 1.8;">
+                            Each benchmark produces a visible flow field. The contours below show velocity magnitude
+                            (dark blue slow to bright yellow fast) for three representative cases, where the solver
+                            reproduces the well-known separation and recirculation behaviour documented in the
+                            literature.
+                        </p>
+                    </div>
+                    <div class="figure-container">
+                        <img src="assets/projects/cfd-solver/step_contour.png" alt="Backward-facing Step">
+                        <div class="figure-caption">// Backward-facing step (Armaly 1983): flow separates at the step and forms a recirculation bubble whose reattachment length is the classic validation metric</div>
+                    </div>
+                    <div class="figure-container">
+                        <img src="assets/projects/cfd-solver/orifice_1p3h_contour.png" alt="Orifice Plate">
+                        <div class="figure-caption">// Orifice plate, single plate with 3 holes (ISO 5167): confined jet through the holes with wake recovery downstream, pressure loss validated against the standard</div>
+                    </div>
+                    <div class="figure-container">
+                        <img src="assets/projects/cfd-solver/cavity_contour.png" alt="Lid-driven Cavity">
+                        <div class="figure-caption">// Lid-driven cavity (Ghia 1982): primary and corner vortices driven by the moving top wall, centerline velocity profile is the standard benchmark</div>
+                    </div>
+                    <div class="figure-container">
+                        <img src="assets/projects/cfd-solver/cavity_streamlines.png" alt="Lid-driven Cavity Streamlines">
+                        <div class="figure-caption">// Same cavity case rendered as streamlines: the coherent vortex structure is directly visible, confirming the solver captures the steady recirculating flow</div>
+                    </div>
+                `
+                }
+            },
             'swarm': {
                 type: 'report',
                 title: 'SwarmGNC: Decentralized UAV Formation Control',
