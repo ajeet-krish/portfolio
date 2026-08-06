@@ -25,136 +25,7 @@
 
         <div class="section-header" style="color: var(--purple);"># Engineering Projects</div>
 
-        <div class="wiki-grid">
-            <!-- 1. AK-Vortex CFD Solver Card -->
-            <div class="wiki-card" onclick="openProject('cfd-solver')">
-                <div class="wiki-card-header">
-                    <div class="wiki-card-title">// AK-Vortex: C++ LBM CFD Solver</div>
-                    <div class="wiki-tag-row">
-                        <span class="tag" style="color: var(--cyan); border: 1px solid var(--cyan);">#C++</span>
-                        <span class="tag" style="color: var(--orange); border: 1px solid var(--orange);">#Python</span>
-                        <span class="tag" style="color: var(--pink); border: 1px solid var(--pink);">#CFD</span>
-                    </div>
-                </div>
-                <div class="wiki-card-body">
-                    A from-scratch D2Q9 Lattice Boltzmann solver in C++20: Multi-Relaxation-Time collision,
-                    Bouzidi curved boundaries, Smagorinsky LES, and 15 canonical validation cases with OpenMP
-                    parallel collision streaming and a Google Test suite.
-                </div>
-
-            </div>
-
-            <!-- 2. SwarmGNC Card -->
-            <div class="wiki-card" onclick="openProject('swarm')">
-                <div class="wiki-card-header">
-                    <div class="wiki-card-title">// SwarmGNC: Decentralized UAV Formation Control</div>
-                    <div class="wiki-tag-row">
-                        <span class="tag" style="color: var(--cyan); border: 1px solid var(--cyan);">#Python</span>
-                        <span class="tag" style="color: var(--orange); border: 1px solid var(--orange);">#GNC</span>
-                        <span class="tag" style="color: var(--green); border: 1px solid var(--green);">#Controls</span>
-                    </div>
-                </div>
-                <div class="wiki-card-body">
-                    Decentralized multi-agent UAV swarm with LQR optimal control, APF obstacle avoidance, and graph
-                    Laplacian consensus. Monte Carlo parameter sensitivity analysis across 4 behavioral regimes.
-                </div>
-                
-            </div>
-
-            <!-- 3. Airfoil CFD Explorer Card -->
-            <div class="wiki-card" onclick="openProject('airfoil-cfd')">
-                <div class="wiki-card-header">
-                    <div class="wiki-card-title">// Airfoil CFD Explorer: Automated Aerodynamic Analysis & Shape
-                        Optimization</div>
-                    <div class="wiki-tag-row">
-                        <span class="tag" style="color: var(--cyan); border: 1px solid var(--cyan);">#Python</span>
-                        <span class="tag" style="color: var(--orange); border: 1px solid var(--orange);">#CFD</span>
-                        <span class="tag" style="color: var(--pink); border: 1px solid var(--pink);">#CAD</span>
-                    </div>
-                </div>
-                <div class="wiki-card-body">
-                    Automated CFD pipeline solving compressible RANS on hybrid C-grid meshes: benchmarking NACA 0012
-                    against experimental wind tunnel data, and utilizing CST parameterization for shape optimization.
-                </div>
-                
-            </div>
-
-            <!-- 4. Hip Protector Capstone Card -->
-            <div class="wiki-card" onclick="openProject('capstone')">
-                <div class="wiki-card-header">
-                    <div class="wiki-card-title">// The Stack: Hip Protector</div>
-                    <div class="wiki-tag-row">
-                        <span class="tag" style="color: var(--pink); border: 1px solid var(--pink);">#FEA</span>
-                        <span class="tag" style="color: var(--cyan); border: 1px solid var(--cyan);">#MATLAB</span>
-                        <span class="tag" style="color: var(--orange); border: 1px solid var(--orange);">#CAD</span>
-                        <span class="tag"
-                            style="color: var(--green); border: 1px solid var(--green);">#SolidWorks</span>
-                    </div>
-                </div>
-                <div class="wiki-card-body">
-                    Full lifecycle engineering design of a medical-grade wearable hip protector. Literature review,
-                    conceptual design with decision matrix scoring, Kelvin-Voigt viscoelastic analysis, FEA impact
-                    simulation, and a MATLAB parametrization tool exporting patient-specific geometry to SolidWorks.
-                </div>
-                <div class="card-meta">University of Ottawa | Capstone 2026</div>
-            </div>
-
-            <!-- 5. Soccer CFD Card -->
-            <div class="wiki-card" onclick="openProject('soccer')">
-                <div class="wiki-card-header">
-                    <div class="wiki-card-title">// The Aerodynamics of Soccer: CFD Analysis of Spin, Wake, and Tactical
-                        Flow</div>
-                    <div class="wiki-tag-row">
-                        <span class="tag" style="color: var(--pink); border: 1px solid var(--pink);">#CFD</span>
-                        <span class="tag" style="color: var(--orange); border: 1px solid var(--orange);">#Python</span>
-                    </div>
-                </div>
-                <div class="wiki-card-body">
-                    CFD analysis of soccer aerodynamics. Compares the Magnus effect vs knuckleball shots, tactical
-                    formation pressure mapping
-                    across 4 formations, and wake drafting analysis of the overlapping fullback run.
-                </div>
-                
-            </div>
-
-            <!-- 6. F1 Dashboard Card -->
-            <div class="wiki-card" onclick="openProject('f1')">
-                <div class="wiki-card-header">
-                    <div class="wiki-card-title">// F1 Aerodynamics Dashboard</div>
-                    <div class="wiki-tag-row">
-                        <span class="tag" style="color: var(--cyan); border: 1px solid var(--cyan);">#Python</span>
-                        <span class="tag" style="color: var(--orange); border: 1px solid var(--orange);">#CFD</span>
-                        <span class="tag" style="color: var(--green); border: 1px solid var(--green);">#Telemetry</span>
-                    </div>
-                </div>
-                <div class="wiki-card-body">
-                    Interactive F1 aerodynamics platform combining FastF1 telemetry, first-principles analytical models,
-                    and SU2 RANS CFD validation. 7 analysis modules across an 11-page Mercedes-themed portfolio.
-                </div>
-                
-            </div>
-
-            <!-- 7. Orbital Trajectory Animator Card -->
-            <div class="wiki-card" onclick="openProject('orbital')">
-                <div class="wiki-card-header">
-                    <div class="wiki-card-title">// 3D Orbital Trajectory Animator</div>
-                    <div class="wiki-tag-row">
-                        <span class="tag" style="color: var(--cyan); border: 1px solid var(--cyan);">#Python</span>
-                        <span class="tag"
-                            style="color: var(--green); border: 1px solid var(--green);">#Matplotlib</span>
-                        <span class="tag"
-                            style="color: var(--orange); border: 1px solid var(--orange);">#Astrodynamics</span>
-                    </div>
-                </div>
-                <div class="wiki-card-body">
-                    Single-page portfolio site demonstrating Keplerian orbit mechanics with 3D animated satellite
-                    trajectories. Covers the two-body problem, LEO, GEO, Polar, Molniya, Hohmann transfers, J2
-                    precession, ground track projection, and parameter sweeps: all generated via a Python package built
-                    on PyAstronomy and Matplotlib.
-                </div>
-                
-            </div>
-        </div>
+        <div id="project-grid"></div>
 
         <div style="margin-top: 30px; text-align: center;">
             <a href="gallery.html" style="color: var(--orange); font-size: 14px;">// View CAD Gallery &rarr;</a>
@@ -184,8 +55,13 @@
         const projectData = {
             'cfd-solver': {
                 type: 'report',
-                title: 'AK-Vortex: High-Performance C++ Lattice Boltzmann CFD Solver',
-                meta: 'C++, Python, CFD',
+                title: 'AK-Vortex: C++ Lattice Boltzmann CFD Solver',
+                meta: 'C++20, OpenMP, Rust, React, Tauri',
+                summary: 'Cache-optimized D2Q9 LBM solver with 14 validated cases, PINN surrogates, and native desktop app.',
+                thumbnail: 'assets/projects/cfd-solver/cavity_streamlines.png',
+                accent: 'var(--cyan)',
+                tier: 'hero',
+                tags: ['C++', 'CFD', 'OpenMP', 'HPC'],
                 tabs: ['Overview', 'Validation', 'Cases'],
                 content: {
                     'overview': `
@@ -337,7 +213,12 @@
             'swarm': {
                 type: 'report',
                 title: 'SwarmGNC: Decentralized UAV Formation Control',
-                meta: 'Python, NumPy, SciPy, Three.js, Plotly',
+                meta: 'Python, C++, Rust, React, MAVLink',
+                summary: 'Multi-language UAV swarm with LQR consensus, C++ flight software, Rust GCS, and React MOCR dashboard.',
+                thumbnail: 'assets/projects/swarm/teaser_3d.png',
+                accent: 'var(--green)',
+                tier: 'hero',
+                tags: ['Python', 'C++', 'Rust', 'GNC'],
                 tabs: ['Overview', '2D', '3D'],
                 content: {
                     'overview': `
@@ -404,8 +285,13 @@
             },
             'soccer': {
                 type: 'report',
-                title: 'The Physics of Soccer',
+                title: 'The Aerodynamics of Soccer',
                 meta: 'SU2, PhiFlow, Python',
+                summary: 'Two-solver CFD pipeline analyzing Magnus effect, wake drafting, and tactical formation flow.',
+                thumbnail: 'assets/projects/soccer/formation_comparison.png',
+                accent: 'var(--green)',
+                tier: 'compact',
+                tags: ['CFD', 'Python', 'PhiFlow', 'SU2'],
                 tabs: ['Overview', 'Shooting', 'Tactical', 'Overlap'],
                 content: {
                     'overview': `
@@ -539,7 +425,12 @@
             'orbital': {
                 type: 'gallery',
                 title: '3D Orbital Trajectory Animator',
-                meta: 'Python, PyAstronomy, Matplotlib, NumPy',
+                meta: 'Python, PyAstronomy, Matplotlib',
+                summary: 'Keplerian orbit mechanics with 3D animated trajectories across 7 orbital regimes.',
+                thumbnail: 'assets/projects/orbital/outputs/multi_orbit.gif',
+                accent: 'var(--orange)',
+                tier: 'compact',
+                tags: ['Python', 'Astrodynamics', 'Matplotlib'],
                 content: `
                 <div class="modal-description" style="margin-bottom: 25px;">
                     <p style="font-size: 15px; line-height: 1.8;">
@@ -577,6 +468,11 @@
                 type: 'gallery',
                 title: 'F1 Aerodynamics Dashboard',
                 meta: 'Python, FastF1, SU2, Plotly',
+                summary: 'Interactive F1 platform combining telemetry, analytical models, and SU2 RANS validation.',
+                thumbnail: 'assets/projects/f1/downforce/component_breakdown.png',
+                accent: 'var(--cyan)',
+                tier: 'compact',
+                tags: ['Python', 'CFD', 'Telemetry', 'Plotly'],
                 content: `
                 <div class="modal-description" style="margin-bottom: 25px;">
                     <p style="font-size: 15px; line-height: 1.8;">
@@ -626,6 +522,11 @@
                 type: 'report',
                 title: 'Airfoil CFD Explorer',
                 meta: 'Python, SU2, NeuralFoil, PyVista',
+                summary: 'Automated RANS pipeline with NACA 0012 validation and CST shape optimization.',
+                thumbnail: 'assets/projects/airfoil/2D_CFD/velocity_4.png',
+                accent: 'var(--orange)',
+                tier: 'compact',
+                tags: ['Python', 'CFD', 'SU2', 'Optimization'],
                 tabs: ['Overview', '2D CFD', 'Optimization'],
                 content: {
                     'overview': `
@@ -693,6 +594,11 @@
                 type: 'report',
                 title: 'The Stack: Wearable Hip Protector',
                 meta: 'SolidWorks, MATLAB, Ansys FEA | Capstone 2026',
+                summary: 'Medical-grade wearable hip protector with FEA simulation and MATLAB parametrization tool.',
+                thumbnail: 'assets/projects/capstone/media/design_overview.png',
+                accent: 'var(--purple)',
+                tier: 'compact',
+                tags: ['FEA', 'MATLAB', 'CAD', 'SolidWorks'],
                 tabs: ['Gallery', 'Full Report'],
                 content: {
                     'gallery': `
@@ -762,8 +668,320 @@
                     </div>
                 `
                 }
-            }
+            },
+            'fea-solver': {
+                type: 'report',
+                title: 'Cauchy: 2D/3D FEA Structural Solver',
+                meta: 'C++20, Qt 6, OpenMP, Google Test',
+                summary: 'Finite element solver with Qt desktop app, adaptive refinement, 10 validated benchmarks, 86 GTest cases.',
+                thumbnail: null,
+                accent: 'var(--pink)',
+                tier: 'hero',
+                tags: ['C++', 'FEA', 'Qt 6', 'Structural'],
+                tabs: ['Overview', 'Validation'],
+                content: {
+                    'overview': `
+                    <div class="modal-description">
+                        <p style="font-size: 15px; line-height: 1.8;">
+                            A <span style="color: var(--cyan);">C++20 finite element solver</span> with a native
+                            <span style="color: var(--pink);">Qt 6 desktop application</span> for interactive structural analysis.
+                            Solves plane stress/strain and 3D solid mechanics problems with adaptive mesh refinement,
+                            geometric nonlinearity, and transient dynamics. Validated against 10 analytical benchmarks
+                            with 86 Google Test cases.
+                        </p>
+                        <div style="margin-top: 15px;">
+                            <a href="https://ajeet-krish.github.io/fea-2d/" target="_blank" class="download-btn">[ Full Project ]</a>
+                            <a href="https://github.com/ajeet-krish/Cauchy-FEA" target="_blank" class="download-btn" style="margin-left: 8px;">[ GitHub Repo ]</a>
+                        </div>
+                    </div>
+                    <div class="card" style="border-color: var(--purple); padding: 15px 20px;">
+                        <div style="color: var(--cyan); font-weight: bold; margin-bottom: 8px; font-size: 16px;">// Key Features</div>
+                        <ul style="list-style-type: none; padding: 0; font-size: 14px; line-height: 1.8;">
+                            <li><span style="color: var(--purple);">Elements:</span> Bar, Q4, Q8, T3, H8, T4</li>
+                            <li><span style="color: var(--purple);">Solvers:</span> Cholesky direct + CG iterative with 4 preconditioners</li>
+                            <li><span style="color: var(--purple);">Adaptivity:</span> ZZ error estimator + red-green h-refinement with GCI</li>
+                            <li><span style="color: var(--purple);">Desktop:</span> Native Qt 6 app with mesh editor, BC assignment, async solver, 6 analysis tabs</li>
+                            <li><span style="color: var(--purple);">Validation:</span> 10 benchmarks (cantilever, Cook, plate-hole, patch test, 3D cases)</li>
+                        </ul>
+                    </div>
+                    `,
+                    'validation': `
+                    <div class="modal-description" style="margin-bottom: 20px;">
+                        <p style="font-size: 15px; line-height: 1.8;">
+                            Validated against <span style="color: var(--purple);">standard structural mechanics benchmarks</span>
+                            with analytical solutions. All metrics extracted directly from the solver.
+                        </p>
+                    </div>
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse; font-size: 13px; color: var(--foreground);">
+                            <tr style="border-bottom: 1px solid var(--current-line);">
+                                <th style="padding: 6px 10px; text-align: left; color: var(--purple);">Benchmark</th>
+                                <th style="padding: 6px 10px; text-align: left; color: var(--purple);">Analytical Ref</th>
+                                <th style="padding: 6px 10px; text-align: left; color: var(--purple);">What It Proves</th>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--current-line);">
+                                <td style="padding: 6px 10px;">Cantilever beam</td>
+                                <td style="padding: 6px 10px;">PL^3/(3EI), Timoshenko</td>
+                                <td style="padding: 6px 10px;">Shear locking (Q4), quadratic completeness (Q8)</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--current-line);">
+                                <td style="padding: 6px 10px;">Cook's membrane</td>
+                                <td style="padding: 6px 10px;">Tip displacement ~13.68 mm</td>
+                                <td style="padding: 6px 10px;">Bending + shear, Q4 vs Q8</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--current-line);">
+                                <td style="padding: 6px 10px;">Plate with hole</td>
+                                <td style="padding: 6px 10px;">Kirsch: sigma_max = 3*sigma_inf</td>
+                                <td style="padding: 6px 10px;">Stress concentration, adaptive refinement</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--current-line);">
+                                <td style="padding: 6px 10px;">Patch test</td>
+                                <td style="padding: 6px 10px;">Exact for linear elements</td>
+                                <td style="padding: 6px 10px;">Element verification (mandatory)</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 6px 10px;">3D Lame problem</td>
+                                <td style="padding: 6px 10px;">Analytical thick cylinder</td>
+                                <td style="padding: 6px 10px;">3D plane strain, H8 elements</td>
+                            </tr>
+                        </table>
+                    </div>
+                    `
+                }
+            },
+            'astro-propagator': {
+                type: 'report',
+                title: 'Astro-Propagator: Orbital Mechanics Suite',
+                meta: 'C++20, Apple Metal, Dear ImGui, OpenGL',
+                summary: 'Full flight dynamics pipeline with SGP4/SDP4, Metal GPU acceleration, and 139 GTest cases.',
+                thumbnail: null,
+                accent: 'var(--cyan)',
+                tier: 'compact',
+                tags: ['C++', 'GPU', 'Space', 'ImGui'],
+                tabs: ['Overview', 'Validation'],
+                content: {
+                    'overview': `
+                    <div class="modal-description">
+                        <p style="font-size: 15px; line-height: 1.8;">
+                            Comprehensive <span style="color: var(--cyan);">flight dynamics pipeline</span> covering TLE parsing,
+                            <span style="color: var(--orange);">SGP4/SDP4 propagation</span>, force modeling, conjunction assessment,
+                            maneuver planning, Monte Carlo analysis, and real-time 3D visualization.
+                            <span style="color: var(--green);">Apple Metal GPU</span> compute shaders enable parallel propagation
+                            of 10,000+ orbits with 10x speedup. Validated against Vallado's Spacetrack Report #3.
+                        </p>
+                        <div style="margin-top: 15px;">
+                            <a href="https://github.com/ajeet-krish/astro-propagator" target="_blank" class="download-btn">[ GitHub Repo ]</a>
+                        </div>
+                    </div>
+                    <div class="card" style="border-color: var(--purple); padding: 15px 20px;">
+                        <div style="color: var(--cyan); font-weight: bold; margin-bottom: 8px; font-size: 16px;">// Key Capabilities</div>
+                        <ul style="list-style-type: none; padding: 0; font-size: 14px; line-height: 1.8;">
+                            <li><span style="color: var(--purple);">Propagation:</span> SGP4/SDP4, Kepler, RK4, Dormand-Prince RK45</li>
+                            <li><span style="color: var(--purple);">Force Models:</span> J2, J4, Harris-Priester drag, SRP, Sun/Moon</li>
+                            <li><span style="color: var(--purple);">GPU:</span> Apple Metal compute, 10x speedup at 10K orbits</li>
+                            <li><span style="color: var(--purple);">Analysis:</span> Conjunction assessment, Lambert solver, Monte Carlo</li>
+                            <li><span style="color: var(--purple);">Tests:</span> 139 Google Test cases across 9 test files</li>
+                        </ul>
+                    </div>
+                    `,
+                    'validation': `
+                    <div class="modal-description" style="margin-bottom: 20px;">
+                        <p style="font-size: 15px; line-height: 1.8;">
+                            All implementations validated against <span style="color: var(--purple);">published reference data</span>
+                            (Vallado Spacetrack Report #3, Curtis, Battin).
+                        </p>
+                    </div>
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse; font-size: 13px; color: var(--foreground);">
+                            <tr style="border-bottom: 1px solid var(--current-line);">
+                                <th style="padding: 6px 10px; text-align: left; color: var(--purple);">Test</th>
+                                <th style="padding: 6px 10px; text-align: left; color: var(--purple);">Reference</th>
+                                <th style="padding: 6px 10px; text-align: left; color: var(--purple);">Accuracy</th>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--current-line);">
+                                <td style="padding: 6px 10px;">SGP4 LEO (ISS)</td>
+                                <td style="padding: 6px 10px;">Vallado Spacetrack Report #3</td>
+                                <td style="padding: 6px 10px;">&lt; 1 km over 7 days</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--current-line);">
+                                <td style="padding: 6px 10px;">J2 acceleration</td>
+                                <td style="padding: 6px 10px;">Analytical formula (Vallado Eq. 8-20)</td>
+                                <td style="padding: 6px 10px;">&lt; 0.01% relative error</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--current-line);">
+                                <td style="padding: 6px 10px;">Hohmann delta-V</td>
+                                <td style="padding: 6px 10px;">Closed-form solution</td>
+                                <td style="padding: 6px 10px;">&lt; 0.001 km/s</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--current-line);">
+                                <td style="padding: 6px 10px;">Coordinate transforms</td>
+                                <td style="padding: 6px 10px;">Round-trip TEME-ECEF-TEME</td>
+                                <td style="padding: 6px 10px;">&lt; 1e-10 km</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 6px 10px;">GPU speedup</td>
+                                <td style="padding: 6px 10px;">CPU vs Metal at 10K orbits</td>
+                                <td style="padding: 6px 10px;">10x on Apple M5</td>
+                            </tr>
+                        </table>
+                    </div>
+                    `
+                }
+            },
+            'astrosim': {
+                type: 'report',
+                title: 'AstroSim: Real-Time Spacecraft ADCS Simulator',
+                meta: 'C++17, Eigen3, Dear ImGui, OpenGL',
+                summary: 'Real-time spacecraft attitude determination and control system simulator with 3D ground control station.',
+                thumbnail: null,
+                accent: 'var(--pink)',
+                tier: 'compact',
+                tags: ['C++', 'ADCS', 'GNC', 'Space', 'ImGui', 'OpenGL'],
+                tabs: ['Overview', 'Architecture'],
+                content: {
+                    'overview': `
+                    <div class="modal-description">
+                        <p style="font-size: 15px; line-height: 1.8;">
+                            Production-grade <span style="color: var(--cyan);">spacecraft ADCS simulator</span> demonstrating GNC
+                            engineering competencies. Double-precision quaternion math, <span style="color: var(--orange);">IGRF-13
+                            magnetic field modeling</span>, multi-source sensor emulation, attitude determination
+                            (<span style="color: var(--green);">TRIAD, QUEST, Error-State EKF</span>), multi-mode control,
+                            and a <span style="color: var(--pink);">C++ ImGui + OpenGL ground control station</span> with 3D CubeSat renderer.
+                        </p>
+                        <div style="margin-top: 15px;">
+                            <a href="https://github.com/ajeet-krish/AstroSim" target="_blank" class="download-btn">[ GitHub Repo ]</a>
+                        </div>
+                    </div>
+                    <div class="card" style="border-color: var(--purple); padding: 15px 20px;">
+                        <div style="color: var(--cyan); font-weight: bold; margin-bottom: 8px; font-size: 16px;">// Key Components</div>
+                        <ul style="list-style-type: none; padding: 0; font-size: 14px; line-height: 1.8;">
+                            <li><span style="color: var(--purple);">Dynamics:</span> Quaternion math, Euler's equation, generic RK4, 193 GTest cases</li>
+                            <li><span style="color: var(--purple);">Environment:</span> IGRF-13 magnetic field, J2 propagator, Meeus sun model</li>
+                            <li><span style="color: var(--purple);">Sensors:</span> Gyroscope, sun sensor, magnetometer, star tracker</li>
+                            <li><span style="color: var(--purple);">Determination:</span> TRIAD, QUEST, Error-State EKF (6-state)</li>
+                            <li><span style="color: var(--purple);">Control:</span> Bang-bang, PD, PID, slew controller + actuators + disturbances</li>
+                        </ul>
+                    </div>
+                    `,
+                    'architecture': `
+                    <div class="modal-description" style="margin-bottom: 20px;">
+                        <p style="font-size: 15px; line-height: 1.8;">
+                            Header-only C++ library in the <span style="color: var(--cyan);">adcs namespace</span>.
+                            Built as a CMake INTERFACE target. 16 test files with 193 passing tests.
+                        </p>
+                    </div>
+                    <div class="card" style="border-color: var(--green); padding: 15px 20px;">
+                        <div style="color: var(--cyan); font-weight: bold; margin-bottom: 8px; font-size: 16px;">// Module Stack</div>
+                        <ul style="list-style-type: none; padding: 0; font-size: 14px; line-height: 1.8;">
+                            <li><span style="color: var(--purple);">Layer 1:</span> Quaternion, InertiaTensor, RotationalDynamics, Integrator, MathUtils</li>
+                            <li><span style="color: var(--purple);">Layer 2:</span> IGRF-13, OrbitalMechanics (J2), SunModel, CoordTransform, Environment</li>
+                            <li><span style="color: var(--purple);">Layer 3:</span> Sensors (Gyro, Sun, Mag, Star), AttitudeDetermination (TRIAD, QUEST, EKF)</li>
+                            <li><span style="color: var(--purple);">Layer 4:</span> ControlSystem, Actuators, DisturbanceTorques, StateMachine, FDIR</li>
+                            <li><span style="color: var(--purple);">Layer 5:</span> SimulationEngine, Scenarios, ImGui GCS with 3D CubeSat renderer</li>
+                        </ul>
+                    </div>
+                    `
+                }
+            },
+
         };
+
+        function renderProjectCards() {
+            const grid = document.getElementById('project-grid');
+            grid.innerHTML = '';
+
+            // Hardcoded display order
+            const heroOrder = ['cfd-solver', 'fea-solver', 'astro-propagator'];
+            const compactOrder = ['swarm', 'astrosim', 'airfoil-cfd', 'soccer', 'capstone', 'f1', 'orbital'];
+
+            // Tag color map
+            const tagColors = {
+                'C++': 'var(--cyan)', 'C++20': 'var(--cyan)', 'C++17': 'var(--cyan)',
+                'Python': 'var(--cyan)',
+                'Rust': 'var(--orange)',
+                'React': 'var(--cyan)',
+                'CFD': 'var(--pink)', 'CFD': 'var(--pink)',
+                'FEA': 'var(--pink)', 'Structural': 'var(--pink)',
+                'GNC': 'var(--green)', 'Controls': 'var(--green)', 'ADCS': 'var(--green)',
+                'HPC': 'var(--green)', 'OpenMP': 'var(--green)',
+                'Space': 'var(--purple)', 'Astrodynamics': 'var(--purple)',
+                'GPU': 'var(--purple)',
+                'Qt 6': 'var(--orange)',
+                'SU2': 'var(--orange)', 'PhiFlow': 'var(--orange)',
+                'MATLAB': 'var(--orange)', 'CAD': 'var(--orange)', 'SolidWorks': 'var(--orange)',
+                'Telemetry': 'var(--green)', 'Plotly': 'var(--green)',
+                'Matplotlib': 'var(--green)',
+                'Optimization': 'var(--pink)',
+            };
+
+            function tagHTML(tag) {
+                const color = tagColors[tag] || 'var(--comment)';
+                return `<span class="tag" style="color: ${color}; border: 1px solid ${color};">${tag}</span>`;
+            }
+
+            // Hero section
+            const heroGrid = document.createElement('div');
+            heroGrid.className = 'bento-hero-grid';
+
+            for (const id of heroOrder) {
+                const project = projectData[id];
+                if (!project) continue;
+                const card = document.createElement('div');
+                card.className = 'bento-hero-card';
+                card.style.setProperty('--card-accent', project.accent);
+                card.onclick = () => openProject(id);
+
+                const thumbHTML = project.thumbnail
+                    ? `<img src="${project.thumbnail}" alt="${project.title}" loading="lazy">`
+                    : `<div class="bento-thumb-fallback">// ${project.tags[0]}</div>`;
+
+                card.innerHTML = `
+                    <div class="bento-hero-thumb">${thumbHTML}</div>
+                    <div class="bento-hero-info">
+                        <div class="bento-hero-title">${project.title.split(':')[0]}</div>
+                        <div class="bento-hero-summary">${project.summary}</div>
+                        <div class="bento-hero-tags">
+                            ${project.tags.map(t => tagHTML(t)).join('')}
+                        </div>
+                    </div>
+                `;
+                heroGrid.appendChild(card);
+            }
+            grid.appendChild(heroGrid);
+
+            // Compact section
+            const compactGrid = document.createElement('div');
+            compactGrid.className = 'bento-compact-grid';
+
+            for (const id of compactOrder) {
+                const project = projectData[id];
+                if (!project) continue;
+                const card = document.createElement('div');
+                card.className = 'bento-compact-card';
+                card.style.setProperty('--card-accent', project.accent);
+                card.onclick = () => openProject(id);
+
+                const thumbHTML = project.thumbnail
+                    ? `<img src="${project.thumbnail}" alt="${project.title}" loading="lazy">`
+                    : `<div class="bento-thumb-fallback">// ${project.tags[0]}</div>`;
+
+                card.innerHTML = `
+                    <div class="bento-compact-thumb">${thumbHTML}</div>
+                    <div class="bento-compact-info">
+                        <div class="bento-compact-title">${project.title.split(':')[0]}</div>
+                        <div class="bento-compact-summary">${project.summary}</div>
+                        <div class="bento-compact-tags">
+                            ${project.tags.map(t => tagHTML(t)).join('')}
+                        </div>
+                    </div>
+                `;
+                compactGrid.appendChild(card);
+            }
+            grid.appendChild(compactGrid);
+        }
+
+        // Render cards on page load
+        renderProjectCards();
 
         function openProject(id) {
             const project = projectData[id];
