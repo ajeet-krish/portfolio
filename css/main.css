@@ -860,3 +860,232 @@ a:hover {
 .markdown-body a:hover {
     color: var(--pink);
 }
+
+/* ==========================================================================
+   10. BENTO GRID LAYOUT
+   ========================================================================== */
+
+/* Section label (e.g., "// PRIMARY PORTFOLIO") */
+.bento-section-label {
+    font-size: 13px;
+    color: var(--comment);
+    margin-top: 25px;
+    margin-bottom: 12px;
+    font-family: 'Meslo LG L', monospace;
+}
+
+/* Hero grid: 3-column for top projects */
+.bento-hero-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 10px;
+}
+
+/* Hero card */
+.bento-hero-card {
+    background-color: #21222c;
+    border-top: 3px solid var(--card-accent, var(--purple));
+    cursor: pointer;
+    transition: all 0.25s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.bento-hero-card:hover {
+    transform: translateY(-4px);
+    border-top-color: var(--pink);
+    box-shadow: 0 8px 25px rgba(189, 147, 249, 0.15);
+}
+
+.bento-hero-thumb {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(135deg, #21222c 0%, color-mix(in srgb, var(--card-accent, var(--purple)) 20%, #21222c) 100%);
+}
+
+.bento-hero-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.bento-hero-card:hover .bento-hero-thumb img {
+    transform: scale(1.05);
+}
+
+/* Gradient overlay on hero thumb for text readability */
+.bento-hero-thumb::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(transparent, rgba(33, 34, 44, 0.85));
+    pointer-events: none;
+}
+
+.bento-hero-info {
+    padding: 14px 16px 16px;
+}
+
+.bento-hero-title {
+    color: var(--cyan);
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    line-height: 1.3;
+}
+
+.bento-hero-summary {
+    color: var(--foreground);
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.bento-hero-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.bento-hero-tags .tag {
+    font-size: 11px;
+    padding: 2px 7px;
+    background-color: var(--current-line);
+    border-radius: 3px;
+    color: var(--comment);
+}
+
+/* Compact grid: vertical list for remaining projects */
+.bento-compact-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* Compact card: horizontal layout */
+.bento-compact-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background-color: #21222c;
+    border-left: 3px solid var(--card-accent, var(--purple));
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    border-bottom: 1px solid var(--current-line);
+}
+
+.bento-compact-card:first-child {
+    border-radius: 4px 4px 0 0;
+}
+
+.bento-compact-card:last-child {
+    border-bottom: none;
+    border-radius: 0 0 4px 4px;
+}
+
+.bento-compact-card:hover {
+    transform: translateX(6px);
+    border-left-color: var(--pink);
+    background-color: #282a36;
+}
+
+.bento-compact-thumb {
+    flex: 0 0 100px;
+    height: 68px;
+    overflow: hidden;
+    border-radius: 3px;
+    background: linear-gradient(135deg, #21222c 0%, color-mix(in srgb, var(--card-accent, var(--purple)) 20%, #21222c) 100%);
+}
+
+.bento-compact-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.bento-compact-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.bento-compact-title {
+    color: var(--cyan);
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bento-compact-summary {
+    color: var(--foreground);
+    font-size: 12px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 4px;
+}
+
+.bento-compact-tags {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.bento-compact-tags .tag {
+    font-size: 10px;
+    padding: 1px 5px;
+    background-color: var(--current-line);
+    border-radius: 3px;
+    color: var(--comment);
+}
+
+/* Thumb fallback (no image) */
+.bento-thumb-fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: var(--comment);
+    font-size: 11px;
+    font-family: 'Meslo LG L', monospace;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .bento-hero-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .bento-compact-card {
+        gap: 12px;
+        padding: 10px 12px;
+    }
+    
+    .bento-compact-thumb {
+        flex: 0 0 80px;
+        height: 56px;
+    }
+    
+    .bento-compact-title {
+        font-size: 13px;
+    }
+}
