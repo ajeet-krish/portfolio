@@ -13,9 +13,19 @@
 <body>
 
     <nav class="top-nav">
-        <a href="index.html" style="color: var(--purple);">[ 01. Home ]</a>
-        <a href="projects.html" style="color: var(--cyan);">[ 02. Projects ]</a>
-        <a href="gallery.html" style="color: var(--orange);">[ 03. Gallery ]</a>
+        <a href="index.html" class="nav-brand">
+            Ajeet Krishnasamy
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-links">
+            <a href="index.html" style="color: var(--purple);">Home</a>
+            <a href="projects.html" style="color: var(--cyan);">Projects</a>
+            <a href="gallery.html" style="color: var(--orange);">Gallery</a>
+        </div>
     </nav>
 
     <div class="container">
@@ -55,157 +65,108 @@
         const projectData = {
             'cfd-solver': {
                 type: 'report',
-                title: 'AK-Vortex: C++ Lattice Boltzmann CFD Solver',
-                meta: 'C++20, OpenMP, Rust, React, Tauri',
+                title: 'AK-Vortex: High-Performance C++ Lattice Boltzmann CFD Suite',
+                meta: 'C++20, OpenMP, Rust, React, Tauri, Python, PyTorch',
                 summary: 'Cache-optimized D2Q9 LBM solver with 14 validated cases, PINN surrogates, and native desktop app.',
-                thumbnail: 'assets/projects/cfd-solver/cavity_streamlines.png',
+                thumbnail: 'assets/projects/ak-vortex/cavity_streamlines.png',
                 accent: 'var(--cyan)',
                 tier: 'hero',
-                tags: ['C++', 'CFD', 'OpenMP', 'HPC'],
+                tags: ['CFD', 'C++', 'Rust', 'Python'],
                 tabs: ['Overview', 'Validation', 'Cases'],
                 content: {
                     'overview': `
                     <div class="modal-description">
                         <p style="font-size: 15px; line-height: 1.8;">
-                            Most production CFD tools (OpenFOAM, SU2) are large, opaque codebases. AK-Vortex is a
-                            from-scratch <span style="color: var(--orange);">D2Q9 Lattice Boltzmann Method</span> solver
-                            written in <span style="color: var(--cyan);">C++20</span> to make the fundamental machinery
-                            of a flow simulator fully transparent and fast. It demonstrates high-performance computing
-                            discipline (flat 1D memory layout, <span style="color: var(--green);">OpenMP</span>
-                            parallel collision and streaming) and core CFD fundamentals (MRT collision operator,
-                            Bouzidi interpolated bounce-back for curved boundaries, and a Smagorinsky LES subgrid model).
+                            Engineered a computational fluid dynamics (CFD) solver from scratch in C++ using the Lattice Boltzmann method with turbulence modeling and adaptive mesh refinement; validated against benchmark cases. The solver demonstrates high-performance computing discipline (cache-aware data layout, <span style="color: var(--green);">OpenMP</span> parallelization) and core CFD fundamentals (MRT collision operator, Bouzidi interpolated bounce-back for curved boundaries, and a Smagorinsky LES subgrid model).
                         </p>
                         <p style="font-size: 15px; line-height: 1.8; margin-top: 12px;">
-                            Rather than chase one exotic flow, the project validates the solver against a library of
-                            <span style="color: var(--purple);">standard benchmark cases</span> from the fluid mechanics
-                            literature. Each case is rendered as a visible flow field (velocity contours and streamlines)
-                            so the physics is directly inspectable. The build is backed by a Google Test suite and
-                            continuous integration on macOS and Ubuntu.
+                            Developed a desktop application in Rust with interactive geometry editing, real-time flow visualization, and contour plot generation. Implemented a machine-learning surrogate model that predicts flow fields, enabling rapid design-space exploration.
                         </p>
                         <div style="margin-top: 15px;">
                             <a href="https://ajeet-krish.github.io/lbm-2d/" target="_blank" class="download-btn">[ Full Project ]</a>
                             <a href="https://github.com/ajeet-krish/lbm-2d" target="_blank" class="download-btn" style="margin-left: 8px;">[ GitHub Repo ]</a>
                         </div>
-                        <p style="font-size: 14px; line-height: 1.6; margin-top: 15px; color: var(--comment);">// Visit the full project for interactive field viewers, theory write-ups, and the complete case library.</p>
                     </div>
                     <div class="card" style="border-color: var(--purple); padding: 15px 20px;">
                         <div style="color: var(--cyan); font-weight: bold; margin-bottom: 8px; font-size: 16px;">// Key Features</div>
                         <ul style="list-style-type: none; padding: 0; font-size: 14px; line-height: 1.8;">
-                            <li><span style="color: var(--purple);">Collision:</span> Multi-Relaxation-Time (MRT) operator, BGK fallback, stable to Re ~ 1000+</li>
+                            <li><span style="color: var(--purple);">Solver:</span> D2Q9 LBM with MRT collision, BGK fallback, stable to Re ~ 1000+</li>
                             <li><span style="color: var(--purple);">Boundaries:</span> Bouzidi interpolated bounce-back for smooth curves and polygons</li>
                             <li><span style="color: var(--purple);">Turbulence:</span> Smagorinsky LES with auto-activation when tau &lt; 0.55</li>
                             <li><span style="color: var(--purple);">Performance:</span> Flat std::vector layout, OpenMP collapse(2) collision and streaming</li>
-                            <li><span style="color: var(--purple);">Validation:</span> 15 canonical cases with a 12-test Google Test suite and CI</li>
+                            <li><span style="color: var(--purple);">Desktop:</span> Tauri 2 + React + Rust app with geometry editor and real-time visualization</li>
+                            <li><span style="color: var(--purple);">PINN:</span> Fourier feature MLP surrogate achieving 300-600x speedup over LBM</li>
                         </ul>
                     </div>
                 `,
                     'validation': `
                     <div class="modal-description" style="margin-bottom: 20px;">
                         <p style="font-size: 15px; line-height: 1.8;">
-                            The solver is validated against a set of <span style="color: var(--purple);">standard fluid
-                            mechanics benchmarks</span>, each with a well-established literature reference. Metrics below
-                            are extracted directly from the simulation via momentum exchange and compared to the cited
-                            experimental or high-fidelity numerical results.
+                            Validated against <span style="color: var(--purple);">standard fluid mechanics benchmarks</span> from the literature. All metrics extracted directly from the simulation via momentum exchange and compared to cited experimental or high-fidelity numerical results.
                         </p>
                     </div>
                     <div style="overflow-x: auto;">
                         <table style="width: 100%; border-collapse: collapse; font-size: 13px; color: var(--foreground);">
                             <tr style="border-bottom: 1px solid var(--current-line);">
-                                <th style="padding: 6px 10px; text-align: left; color: var(--purple);">Benchmark Case</th>
+                                <th style="padding: 6px 10px; text-align: left; color: var(--purple);">Benchmark</th>
                                 <th style="padding: 6px 10px; text-align: center; color: var(--purple);">Re Range</th>
                                 <th style="padding: 6px 10px; text-align: left; color: var(--purple);">Key Metric</th>
-                                <th style="padding: 6px 10px; text-align: left; color: var(--purple);">Literature</th>
-                            </tr>
-                            <tr style="border-bottom: 1px solid var(--current-line);">
-                                <td style="padding: 6px 10px;">Flat plate boundary layer</td>
-                                <td style="padding: 6px 10px; text-align: center;">500-2000</td>
-                                <td style="padding: 6px 10px;">Cf, Cd, Cl vs AoA</td>
-                                <td style="padding: 6px 10px;">Blasius 1908, thin-airfoil theory</td>
+                                <th style="padding: 6px 10px; text-align: left; color: var(--purple);">Reference</th>
                             </tr>
                             <tr style="border-bottom: 1px solid var(--current-line);">
                                 <td style="padding: 6px 10px;">Cylinder wake</td>
                                 <td style="padding: 6px 10px; text-align: center;">100-200</td>
-                                <td style="padding: 6px 10px;">St, Cd</td>
-                                <td style="padding: 6px 10px;">Williamson 1988, Tritton 1959</td>
+                                <td style="padding: 6px 10px;">Cd = 1.536 (Re=100)</td>
+                                <td style="padding: 6px 10px;">Mei/Tritton</td>
                             </tr>
                             <tr style="border-bottom: 1px solid var(--current-line);">
-                                <td style="padding: 6px 10px;">Square cylinder</td>
-                                <td style="padding: 6px 10px; text-align: center;">200</td>
-                                <td style="padding: 6px 10px;">Cd, St</td>
-                                <td style="padding: 6px 10px;">Lyn et al. 1995 (ERCOFTAC 043)</td>
+                                <td style="padding: 6px 10px;">Flat plate BL</td>
+                                <td style="padding: 6px 10px; text-align: center;">1000</td>
+                                <td style="padding: 6px 10px;">Cd ~ 0.070</td>
+                                <td style="padding: 6px 10px;">Blasius (1.7% error)</td>
                             </tr>
                             <tr style="border-bottom: 1px solid var(--current-line);">
                                 <td style="padding: 6px 10px;">Lid-driven cavity</td>
-                                <td style="padding: 6px 10px; text-align: center;">100-1000</td>
-                                <td style="padding: 6px 10px;">u-profile</td>
-                                <td style="padding: 6px 10px;">Ghia, Ghia & Shin 1982</td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid var(--current-line);">
-                                <td style="padding: 6px 10px;">Backward-facing step</td>
-                                <td style="padding: 6px 10px; text-align: center;">100-400</td>
-                                <td style="padding: 6px 10px;">Xr / H</td>
-                                <td style="padding: 6px 10px;">Armaly et al. 1983</td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid var(--current-line);">
-                                <td style="padding: 6px 10px;">Orifice plate</td>
                                 <td style="padding: 6px 10px; text-align: center;">100</td>
-                                <td style="padding: 6px 10px;">Loss coeff K</td>
-                                <td style="padding: 6px 10px;">ISO 5167, Idelchik 2006</td>
+                                <td style="padding: 6px 10px;">u_max = 0.102</td>
+                                <td style="padding: 6px 10px;">Ghia 1982 (1.0%)</td>
                             </tr>
                             <tr style="border-bottom: 1px solid var(--current-line);">
-                                <td style="padding: 6px 10px;">Periodic hills</td>
-                                <td style="padding: 6px 10px; text-align: center;">100-2800</td>
-                                <td style="padding: 6px 10px;">Reattachment, U-profile</td>
-                                <td style="padding: 6px 10px;">Moser / Kim / Moin 1993</td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid var(--current-line);">
-                                <td style="padding: 6px 10px;">Rotating cylinder</td>
+                                <td style="padding: 6px 10px;">BFS reattachment</td>
                                 <td style="padding: 6px 10px; text-align: center;">100</td>
-                                <td style="padding: 6px 10px;">Cl vs omega</td>
-                                <td style="padding: 6px 10px;">Kutta-Joukowski theorem</td>
+                                <td style="padding: 6px 10px;">Xr/H = 3.2</td>
+                                <td style="padding: 6px 10px;">Armaly 1983 (3.2%)</td>
                             </tr>
                             <tr>
-                                <td style="padding: 6px 10px;">Urban canyon</td>
-                                <td style="padding: 6px 10px; text-align: center;">100</td>
-                                <td style="padding: 6px 10px;">Flow regime</td>
-                                <td style="padding: 6px 10px;">Oke 1988</td>
+                                <td style="padding: 6px 10px;">Ground effect</td>
+                                <td style="padding: 6px 10px; text-align: center;">1000</td>
+                                <td style="padding: 6px 10px;">Cl +0.40 to +1.42</td>
+                                <td style="padding: 6px 10px;">Gap sweep study</td>
                             </tr>
                         </table>
-                    </div>
-                    <div class="card" style="border-color: var(--green); padding: 15px 20px; margin-top: 20px;">
-                        <div style="color: var(--cyan); font-weight: bold; margin-bottom: 8px; font-size: 16px;">// Sample Validated Results</div>
-                        <ul style="list-style-type: none; padding: 0; font-size: 14px; line-height: 1.8;">
-                            <li><span style="color: var(--purple);">Cylinder Re=100:</span> Cd = 1.774 (validated vs Tritton)</li>
-                            <li><span style="color: var(--purple);">Square cylinder Re=200:</span> Cd = 1.157, Cl = 0.47 (vs ERCOFTAC 043)</li>
-                            <li><span style="color: var(--purple);">Flat plate AoA=0, Re=1000:</span> Cd ~ 0.026 (vs Blasius)</li>
-                            <li><span style="color: var(--purple);">Sports ball (dimpled):</span> Cd = 1.902 at Re=100 (roughness effect)</li>
-                        </ul>
                     </div>
                 `,
                     'cases': `
                     <div class="modal-description" style="margin-bottom: 20px;">
                         <p style="font-size: 15px; line-height: 1.8;">
-                            Each benchmark produces a visible flow field. The contours below show velocity magnitude
-                            (dark blue slow to bright yellow fast) for three representative cases, where the solver
-                            reproduces the well-known separation and recirculation behaviour documented in the
-                            literature.
+                            14 validated simulation cases across external aerodynamics, internal flows, and urban wind. Each produces visible flow fields (velocity contours and streamlines) for direct physics inspection.
                         </p>
                     </div>
                     <div class="figure-container">
-                        <img src="assets/projects/cfd-solver/step_contour.png" alt="Backward-facing Step">
+                        <img src="assets/projects/ak-vortex/step_contour.png" alt="Backward-facing Step">
                         <div class="figure-caption">// Backward-facing step (Armaly 1983): flow separates at the step and forms a recirculation bubble whose reattachment length is the classic validation metric</div>
                     </div>
                     <div class="figure-container">
-                        <img src="assets/projects/cfd-solver/orifice_1p3h_contour.png" alt="Orifice Plate">
-                        <div class="figure-caption">// Orifice plate, single plate with 3 holes (ISO 5167): confined jet through the holes with wake recovery downstream, pressure loss validated against the standard</div>
+                        <img src="assets/projects/ak-vortex/orifice_1p3h_contour.png" alt="Orifice Plate">
+                        <div class="figure-caption">// Orifice plate (ISO 5167): confined jet through holes with wake recovery downstream, pressure loss validated against the standard</div>
                     </div>
                     <div class="figure-container">
-                        <img src="assets/projects/cfd-solver/cavity_contour.png" alt="Lid-driven Cavity">
-                        <div class="figure-caption">// Lid-driven cavity (Ghia 1982): primary and corner vortices driven by the moving top wall, centerline velocity profile is the standard benchmark</div>
+                        <img src="assets/projects/ak-vortex/cavity_contour.png" alt="Lid-driven Cavity">
+                        <div class="figure-caption">// Lid-driven cavity (Ghia 1982): primary and corner vortices driven by the moving top wall</div>
                     </div>
                     <div class="figure-container">
-                        <img src="assets/projects/cfd-solver/cavity_streamlines.png" alt="Lid-driven Cavity Streamlines">
-                        <div class="figure-caption">// Same cavity case rendered as streamlines: the coherent vortex structure is directly visible, confirming the solver captures the steady recirculating flow</div>
+                        <img src="assets/projects/ak-vortex/cavity_streamlines.png" alt="Lid-driven Cavity Streamlines">
+                        <div class="figure-caption">// Same cavity case rendered as streamlines: coherent vortex structure directly visible</div>
                     </div>
                 `
                 }
@@ -218,7 +179,7 @@
                 thumbnail: 'assets/projects/swarm/teaser_3d.png',
                 accent: 'var(--green)',
                 tier: 'hero',
-                tags: ['Python', 'C++', 'Rust', 'GNC'],
+                tags: ['GNC', 'C++', 'Python'],
                 tabs: ['Overview', '2D', '3D'],
                 content: {
                     'overview': `
@@ -430,7 +391,7 @@
                 thumbnail: 'assets/projects/orbital/outputs/multi_orbit.gif',
                 accent: 'var(--orange)',
                 tier: 'compact',
-                tags: ['Python', 'Astrodynamics', 'Matplotlib'],
+                tags: ['Python', 'Astrodynamics'],
                 content: `
                 <div class="modal-description" style="margin-bottom: 25px;">
                     <p style="font-size: 15px; line-height: 1.8;">
@@ -472,7 +433,7 @@
                 thumbnail: 'assets/projects/f1/downforce/component_breakdown.png',
                 accent: 'var(--cyan)',
                 tier: 'compact',
-                tags: ['Python', 'CFD', 'Telemetry', 'Plotly'],
+                tags: ['Python', 'CFD'],
                 content: `
                 <div class="modal-description" style="margin-bottom: 25px;">
                     <p style="font-size: 15px; line-height: 1.8;">
@@ -523,10 +484,10 @@
                 title: 'Airfoil CFD Explorer',
                 meta: 'Python, SU2, NeuralFoil, PyVista',
                 summary: 'Automated RANS pipeline with NACA 0012 validation and CST shape optimization.',
-                thumbnail: 'assets/projects/airfoil/2D_CFD/velocity_4.png',
+                thumbnail: 'assets/projects/airfoil-explorer/2D_CFD/velocity_4.png',
                 accent: 'var(--orange)',
                 tier: 'compact',
-                tags: ['Python', 'CFD', 'SU2', 'Optimization'],
+                tags: ['CFD', 'Python', 'SU2'],
                 tabs: ['Overview', '2D CFD', 'Optimization'],
                 content: {
                     'overview': `
@@ -553,15 +514,15 @@
                         </p>
                     </div>
                     <div class="figure-container">
-                        <img src="assets/projects/airfoil/2D_CFD/velocity_4.png" alt="Velocity AoA 4">
+                        <img src="assets/projects/airfoil-explorer/2D_CFD/velocity_4.png" alt="Velocity AoA 4">
                         <div class="figure-caption">// Velocity field at AoA = 4&deg;</div>
                     </div>
                     <div class="figure-container">
-                        <img src="assets/projects/airfoil/2D_CFD/pressure_4.png" alt="Pressure AoA 4">
+                        <img src="assets/projects/airfoil-explorer/2D_CFD/pressure_4.png" alt="Pressure AoA 4">
                         <div class="figure-caption">// Pressure field at AoA = 4&deg;</div>
                     </div>
                     <div class="figure-container">
-                        <img src="assets/projects/airfoil/2D_CFD/drag_polar.png" alt="Drag Polar">
+                        <img src="assets/projects/airfoil-explorer/2D_CFD/drag_polar.png" alt="Drag Polar">
                         <div class="figure-caption">// NACA 0012 Drag Polar benchmark</div>
                     </div>
                 `,
@@ -572,19 +533,19 @@
                         </p>
                     </div>
                     <div class="figure-container">
-                        <img src="assets/projects/airfoil/Optimization/airfoil_shape_overlay.png" alt="Shape Overlay">
+                        <img src="assets/projects/airfoil-explorer/Optimization/airfoil_shape_overlay.png" alt="Shape Overlay">
                         <div class="figure-caption">// Baseline (black) vs Optimized (red) airfoil shape</div>
                     </div>
                     <div class="figure-container">
-                        <img src="assets/projects/airfoil/Optimization/velocity_optimized.png" alt="Velocity Optimized">
+                        <img src="assets/projects/airfoil-explorer/Optimization/velocity_optimized.png" alt="Velocity Optimized">
                         <div class="figure-caption">// Velocity field of optimized airfoil</div>
                     </div>
                     <div class="figure-container">
-                        <img src="assets/projects/airfoil/Optimization/pressure_optimized.png" alt="Pressure Optimized">
+                        <img src="assets/projects/airfoil-explorer/Optimization/pressure_optimized.png" alt="Pressure Optimized">
                         <div class="figure-caption">// Pressure field of optimized airfoil</div>
                     </div>
                     <div class="figure-container">
-                        <img src="assets/projects/airfoil/Optimization/convergence_4.png" alt="Convergence">
+                        <img src="assets/projects/airfoil-explorer/Optimization/convergence_4.png" alt="Convergence">
                         <div class="figure-caption">// Optimization convergence history</div>
                     </div>
                 `
@@ -598,7 +559,7 @@
                 thumbnail: 'assets/projects/capstone/media/design_overview.png',
                 accent: 'var(--purple)',
                 tier: 'compact',
-                tags: ['FEA', 'MATLAB', 'CAD', 'SolidWorks'],
+                tags: ['SolidWorks', 'MATLAB', 'FEA'],
                 tabs: ['Gallery', 'Full Report'],
                 content: {
                     'gallery': `
@@ -671,23 +632,22 @@
             },
             'fea-solver': {
                 type: 'report',
-                title: 'Cauchy: 2D/3D FEA Structural Solver',
-                meta: 'C++20, Qt 6, OpenMP, Google Test',
-                summary: 'Finite element solver with Qt desktop app, adaptive refinement, 10 validated benchmarks, 86 GTest cases.',
-                thumbnail: null,
+                title: 'Crucible-FEA: 2D Finite Element Structural Solver',
+                meta: 'C++20, Qt 6, OpenMP, Google Test, Python',
+                summary: 'Finite element solver with Qt desktop app, adaptive refinement, 10 validated benchmarks, 57 GTest cases.',
+                thumbnail: 'assets/projects/crucible-fea/cantilever_stress_contour.png',
                 accent: 'var(--pink)',
                 tier: 'hero',
-                tags: ['C++', 'FEA', 'Qt 6', 'Structural'],
+                tags: ['FEA', 'C++', 'Python'],
                 tabs: ['Overview', 'Validation'],
                 content: {
                     'overview': `
                     <div class="modal-description">
                         <p style="font-size: 15px; line-height: 1.8;">
-                            A <span style="color: var(--cyan);">C++20 finite element solver</span> with a native
-                            <span style="color: var(--pink);">Qt 6 desktop application</span> for interactive structural analysis.
-                            Solves plane stress/strain and 3D solid mechanics problems with adaptive mesh refinement,
-                            geometric nonlinearity, and transient dynamics. Validated against 10 analytical benchmarks
-                            with 86 Google Test cases.
+                            Developed a 2D finite element analysis (FEA) solver in C++ supporting 6 element types for structural mechanics problems, with optimized sparse matrix solvers for efficient computation on large meshes. Implemented advanced capabilities including adaptive mesh refinement, nonlinear geometry handling, transient dynamics, and contact mechanics.
+                        </p>
+                        <p style="font-size: 15px; line-height: 1.8; margin-top: 12px;">
+                            Built a desktop application with a complete workflow: mesh generation, boundary condition assignment, real-time stress and displacement contour visualization.
                         </p>
                         <div style="margin-top: 15px;">
                             <a href="https://ajeet-krish.github.io/fea-2d/" target="_blank" class="download-btn">[ Full Project ]</a>
@@ -752,22 +712,21 @@
             'zenith': {
                 type: 'report',
                 title: 'Zenith: High-Fidelity Orbital Propagation Engine',
-                meta: 'C++20, Apple Metal, Dear ImGui, OpenGL',
+                meta: 'C++20, Apple Metal, Dear ImGui, OpenGL, Python',
                 summary: 'Full flight dynamics pipeline with SGP4/SDP4, Metal GPU acceleration, and 139 GTest cases.',
-                thumbnail: null,
+                thumbnail: 'assets/projects/zenith/3d-orbit-view.gif',
                 accent: 'var(--cyan)',
                 tier: 'compact',
-                tags: ['C++', 'GPU', 'Space', 'ImGui'],
+                tags: ['Orbital Mechanics', 'C++', 'Python'],
                 tabs: ['Overview', 'Validation'],
                 content: {
                     'overview': `
                     <div class="modal-description">
                         <p style="font-size: 15px; line-height: 1.8;">
-                            Comprehensive <span style="color: var(--cyan);">flight dynamics pipeline</span> covering TLE parsing,
-                            <span style="color: var(--orange);">SGP4/SDP4 propagation</span>, force modeling, conjunction assessment,
-                            maneuver planning, Monte Carlo analysis, and real-time 3D visualization.
-                            <span style="color: var(--green);">Apple Metal GPU</span> compute shaders enable parallel propagation
-                            of 10,000+ orbits with 10x speedup. Validated against Vallado's Spacetrack Report #3.
+                            Built an orbital propagation engine in C++ implementing satellite orbit prediction (SGP4/SDP4) with 6 perturbation force models (J2, drag, solar radiation, third-body). Developed mission planning modules for collision risk assessment, orbital transfer maneuvers (Hohmann, Lambert solver), uncertainty propagation via Monte Carlo simulation, ground track prediction, and satellite constellation coverage analysis.
+                        </p>
+                        <p style="font-size: 15px; line-height: 1.8; margin-top: 12px;">
+                            Built a real-time 3D orbit visualization tool with interactive propagation controls, force model toggles, and a preset satellite database (ISS, Starlink, GPS, Galileo). Apple Metal GPU compute shaders enable parallel propagation of 10,000+ orbits with 10x speedup over CPU.
                         </p>
                         <div style="margin-top: 15px;">
                             <a href="https://github.com/ajeet-krish/zenith" target="_blank" class="download-btn">[ GitHub Repo ]</a>
@@ -831,22 +790,21 @@
             'astrosim': {
                 type: 'report',
                 title: 'AstroSim: Real-Time Spacecraft ADCS Simulator',
-                meta: 'C++17, Eigen3, Dear ImGui, OpenGL',
+                meta: 'C++17, Eigen3, Dear ImGui, OpenGL, ImPlot',
                 summary: 'Real-time spacecraft attitude determination and control system simulator with 3D ground control station.',
-                thumbnail: null,
+                thumbnail: 'assets/projects/astrosim/cubesat.png',
                 accent: 'var(--pink)',
                 tier: 'compact',
-                tags: ['C++', 'ADCS', 'GNC', 'Space', 'ImGui', 'OpenGL'],
+                tags: ['ADCS', 'GNC', 'C++'],
                 tabs: ['Overview', 'Architecture'],
                 content: {
                     'overview': `
                     <div class="modal-description">
                         <p style="font-size: 15px; line-height: 1.8;">
-                            Production-grade <span style="color: var(--cyan);">spacecraft ADCS simulator</span> demonstrating GNC
-                            engineering competencies. Double-precision quaternion math, <span style="color: var(--orange);">IGRF-13
-                            magnetic field modeling</span>, multi-source sensor emulation, attitude determination
-                            (<span style="color: var(--green);">TRIAD, QUEST, Error-State EKF</span>), multi-mode control,
-                            and a <span style="color: var(--pink);">C++ ImGui + OpenGL ground control station</span> with 3D CubeSat renderer.
+                            Designed a spacecraft attitude determination and control system (ADCS) simulator in C++ modeling the full control loop: magnetic field sensing, attitude estimation, and 3-axis stabilization using reaction wheels. Implemented 4 sensor models (gyroscope, sun sensor, magnetometer, star tracker), 2 attitude determination algorithms, multi-mode control (detumbling, pointing, fine-pointing), and fault detection/isolation/recovery (FDIR).
+                        </p>
+                        <p style="font-size: 15px; line-height: 1.8; margin-top: 12px;">
+                            Built a ground control station with real-time telemetry panels, 3D spacecraft visualization, and 5 pre-built mission scenarios.
                         </p>
                         <div style="margin-top: 15px;">
                             <a href="https://github.com/ajeet-krish/AstroSim" target="_blank" class="download-btn">[ GitHub Repo ]</a>
@@ -855,7 +813,7 @@
                     <div class="card" style="border-color: var(--purple); padding: 15px 20px;">
                         <div style="color: var(--cyan); font-weight: bold; margin-bottom: 8px; font-size: 16px;">// Key Components</div>
                         <ul style="list-style-type: none; padding: 0; font-size: 14px; line-height: 1.8;">
-                            <li><span style="color: var(--purple);">Dynamics:</span> Quaternion math, Euler's equation, generic RK4, 193 GTest cases</li>
+                            <li><span style="color: var(--purple);">Dynamics:</span> Quaternion math, Euler's equation, generic RK4, 199 GTest cases</li>
                             <li><span style="color: var(--purple);">Environment:</span> IGRF-13 magnetic field, J2 propagator, Meeus sun model</li>
                             <li><span style="color: var(--purple);">Sensors:</span> Gyroscope, sun sensor, magnetometer, star tracker</li>
                             <li><span style="color: var(--purple);">Determination:</span> TRIAD, QUEST, Error-State EKF (6-state)</li>
@@ -892,7 +850,7 @@
 
             // Hardcoded display order
             const heroOrder = ['cfd-solver', 'fea-solver', 'zenith'];
-            const compactOrder = ['swarm', 'astrosim', 'airfoil-cfd', 'soccer', 'capstone', 'f1', 'orbital'];
+            const compactOrder = ['astrosim', 'swarm', 'airfoil-cfd', 'soccer', 'capstone', 'f1', 'orbital'];
 
             // Tag color map
             const tagColors = {
@@ -900,11 +858,11 @@
                 'Python': 'var(--cyan)',
                 'Rust': 'var(--orange)',
                 'React': 'var(--cyan)',
-                'CFD': 'var(--pink)', 'CFD': 'var(--pink)',
+                'CFD': 'var(--pink)',
                 'FEA': 'var(--pink)', 'Structural': 'var(--pink)',
                 'GNC': 'var(--green)', 'Controls': 'var(--green)', 'ADCS': 'var(--green)',
                 'HPC': 'var(--green)', 'OpenMP': 'var(--green)',
-                'Space': 'var(--purple)', 'Astrodynamics': 'var(--purple)',
+                'Space': 'var(--purple)', 'Astrodynamics': 'var(--purple)', 'Orbital Mechanics': 'var(--purple)',
                 'GPU': 'var(--purple)',
                 'Qt 6': 'var(--orange)',
                 'SU2': 'var(--orange)', 'PhiFlow': 'var(--orange)',
@@ -1065,6 +1023,18 @@
         window.onclick = function (event) {
             const modal = document.getElementById('project-modal');
             if (event.target == modal) closeModal();
+        }
+
+        // Mobile nav toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', () => {
+                navToggle.classList.toggle('is-active');
+                navLinks.classList.toggle('is-open');
+                const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+                navToggle.setAttribute('aria-expanded', !expanded);
+            });
         }
     </script>
 

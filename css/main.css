@@ -108,28 +108,146 @@ a:hover {
    4. NAVIGATION
    ========================================================================== */
 
-/* Styles the top navigation bar, spacing out the links and adding a bottom border. */
+/* Fixed top navigation bar matching Zenith website style */
 .top-nav {
-    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: auto;
     display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 20px;
-    background: #21222c;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+    background: #0d0d12;
     border-bottom: 1px solid var(--current-line);
     font-size: 14px;
+    z-index: 100;
     box-sizing: border-box;
 }
 
-/* Removes standard link styling from navigation links. */
-.top-nav a {
+/* Brand section with name */
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     text-decoration: none;
-    transition: 0.3s;
+    color: var(--foreground);
+    font-family: 'Meslo LG L', 'JetBrains Mono', monospace;
+    font-weight: bold;
+    font-size: 16px;
 }
 
-/* Forces navigation links to turn pink on hover, overriding default link hover. */
-.top-nav a:hover {
+.nav-brand:hover {
+    color: var(--cyan);
+}
+
+/* Navigation links container */
+.nav-links {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Individual navigation links */
+.nav-links a {
+    color: var(--cyan);
+    text-decoration: none;
+    font-family: 'Meslo LG L', 'JetBrains Mono', monospace;
+    text-transform: none;
+    letter-spacing: normal;
+    transition: color 150ms ease;
+    position: relative;
+}
+
+.nav-links a:hover {
     color: var(--pink) !important;
+}
+
+/* Mobile nav toggle button */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    flex-shrink: 0;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--foreground);
+    border-radius: 9999px;
+    transition: transform 150ms ease, opacity 150ms ease;
+}
+
+/* Main content offset for fixed navbar */
+.container {
+    padding-top: 60px;
+}
+
+/* Mobile responsive nav */
+@media (max-width: 767px) {
+    .top-nav {
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 56px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
+        background-color: rgba(10, 10, 15, 0.97);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 250ms ease, opacity 250ms ease;
+    }
+
+    .nav-links.is-open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .nav-links.is-open a {
+        font-size: 18px;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-toggle.is-active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .nav-toggle.is-active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle.is-active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
 }
 
 /* ==========================================================================
